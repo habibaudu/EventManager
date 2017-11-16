@@ -7,6 +7,12 @@ body {
  main {
      flex: 1 0 auto;
  }
+ #backg{
+     border:2px solid #ddd;
+     padding: 2%;
+     border-radius: 3%;
+ }
+
 #main{
      margin-top: 0.5%;
 }
@@ -306,6 +312,17 @@ div >h5{
     background-color: #B71C1C;
    
 }
+.add{
+    width:20%;
+    padding: 0.8% 0.8%;
+    border: none;
+    font-size: 100%;
+    letter-spacing: 0.14em;
+    box-sizing: border-box;
+    border-radius:3%;
+	color: #fff;
+    background-color: #B71C1C;
+}
 
 button a{
     color:#000;
@@ -313,6 +330,18 @@ button a{
 
 
 .editbtn{
+    width:20%;
+    padding: 0.8% 0.8%;
+    border: none;
+    font-size: 100%;
+    letter-spacing: 0.14em;
+    box-sizing: border-box;
+    border-radius:3%;
+	color:#000 !important;
+	background-color:#FFD600;
+   
+}
+.editbtn2{
     width:20%;
     padding: 0.8% 0.8%;
     border: none;
