@@ -13,6 +13,7 @@ body {
      border-radius: 3%;
  }
 
+
 #main{
      margin-top: 0.5%;
 }
@@ -184,18 +185,24 @@ ol {
 	color:#B71C1C;     
 }
 
-
-
-div >h6{
-    text-align: center;
-    padding: 3%;
-    border-radius: 2%;
-	font-family: Comic Sans MS;
-	font-size:115%;
-	color:white;
-
-	text-shadow:1px 1px 2px #6f0d16; 
+#admin img{
+    max-height:50px;
 }
+
+#centerpix {
+    background-color: #ddd;
+}
+
+#centerpix img{
+    margin-left: 12%;
+}
+
+label{
+    font-size: 20px;
+    color:#ddd;
+}
+
+
 #featured{
    
    font-family: Comic Sans MS;
