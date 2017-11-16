@@ -191,9 +191,13 @@ div >h5{
     font-size: 100%;
     letter-spacing: 0.14em;
     box-sizing: border-box;
-	color: #fff;
+	color: #000;
 	background-color: #FFD600;
    
+}
+
+button a{
+    color:#000;
 }
 
 
@@ -218,7 +222,7 @@ input[type=password]{
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    color:#757575;
+    color:#ddd;
     border:none;
     background-color:#212121;
     box-sizing: border-box;
@@ -228,7 +232,7 @@ input[type=text]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    color:#757575;
+    color:#ddd;
     border:none;
     background-color:#212121;
     display: inline-block;
@@ -317,13 +321,13 @@ span a{
  
 }
 
-
 #slidess{
     margin-top: 2%;
     margin-bottom: 1%;
     background-color: #ddd;
     padding:1.5%;
 }
+
 
 #featured2{
    width:70%;
