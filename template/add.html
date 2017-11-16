@@ -1,0 +1,175 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta  http-equiv="X-UA-compatible" content="IE=edge" />
+<meta charset ="utf-8"/>
+<title>EventManager</title>
+
+ <!--Import Google Icon Font  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Import materialize.css  -->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet"  href="styles.css" type="text/css"/>
+
+<script>
+
+</script>
+</head>
+<body>
+    <!--Import jQuery before materialize.js -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+<main>
+<div class="row" >
+    <div class="col s12 m7 l7">
+    <div class="event"><em>EventManager</em></div>
+   
+     
+    </div>
+    <div class="col s12 m5 l5">
+   
+    </div>
+    </div>
+
+    <div id="eventwrapper">
+    <div class="yourevent"><em>Your Events</em></div>
+    </div>
+  
+  <div class="container">
+    <div id="manual">
+    <ol class="rounded-list2">
+        <li><span><em class="eventtype">Event Type : Wedding Reception<em>
+            <ul>
+                <li>Venue: Wedding center</li>
+                <li>Date: 20th November 2018</li>
+                <li>Time: 10am</li>
+            </ul>
+            <button class="editbtn" ><a href="edit.html">edit</a></button><br> <br> <button class="delete">delete</button></li>
+
+        <li><span><em class="eventtype">Event Type : Dinner Party<em>
+            <ul>
+                <li>Venue: Dinner center</li>
+                <li>Date: 4th september 2018</li>
+                <li>Time: 8pm</li>
+            </ul>
+            <button class="editbtn" ><a href="edit.html">edit</a></button><br> <br> <button class="delete">delete</button></li>
+
+        
+                         
+    </ol>
+
+    </div>
+
+  </div>
+
+  <div id="eventwrapper2">
+    <div class="yourevent"><em>Add Events</em></div>
+    </div>
+
+     <div class="container" id="main3">
+     <form>
+     <input type="text" placeholder="Enter event Type" name="Type" required=""/><br>
+      <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Select Center</option>
+      <option value="1">Dinner Center</option>
+      <option value="2">Wedding Center</option>
+      <option value="3">Conference Hall</option>
+    </select>
+    
+    </div>
+
+     <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Select Day</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    
+    </div>
+    <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Select Month</option>
+      <option value="1">Jan</option>
+      <option value="2">Feb</option>
+      <option value="3">Mar</option>
+      <option value="4">Apr</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">Jul</option>
+      <option value="8">August</option>
+      <option value="9">september</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+    
+    </div>
+    <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Select year</option>
+      <option value="1">2017</option>
+      <option value="2">2018</option>
+      <option value="3">2019</option>
+      <option value="4">2020</option>
+      <option value="5">2021</option>
+      <option value="6">2022</option>
+      <option value="7">2023</option>
+      <option value="8">2024</option>
+      <option value="9">2025</option>
+
+    </select>
+    
+    </div>
+
+
+     <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Select Time</option>
+      <option value="1">1pm</option>
+      <option value="2">6am</option>
+      <option value="3">10pm</option>
+      <option value="4">12noon</option>
+      <option value="5">4pm</option>
+      <option value="6">9am</option>
+    
+    </select>
+    
+    </div>
+    <script>
+     $(document).ready(function() {
+        $('select').material_select();
+    });
+  </script>
+       <button class="delete">delete</button>
+    </form>
+
+  </div>
+
+</main>
+  
+    
+  <!-- foter -->
+   <center><footer class=""  id="footertext">
+      
+    <div class="footer-copyright">
+      <div class="container" >
+      	<span id='footertext'>© Copyright 2017. All rights reserved </span>
+      </div>
+    </div>
+  </footer></center>
+  
+</body>
+</html>
