@@ -4,6 +4,19 @@ body {
      flex-direction: column;
      background-color:#673AB7;
  }
+ #chain a{
+     color:#ddd; 
+     padding: 3%;
+     border-radius: 2%;
+     margin:2%;
+     font-size: 120%;
+      text-shadow:1px 1px 2px #6f0d16;
+ }
+  #chain a:hover{
+     color:#673AB7; 
+     padding: 3%;
+     font-size: 120%;
+ }
  main {
      flex: 1 0 auto;
  }
@@ -435,11 +448,8 @@ span .f{
 	color:#9E9E9E;
 }
 
-.avatar{
-    width:40%;
-}
 span a{
-	
+	color: #FFD600;
 	text-decoration: none;
 }
 .animate{
