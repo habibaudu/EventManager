@@ -7,10 +7,28 @@ body {
  main {
      flex: 1 0 auto;
  }
+ #indent{
+     text-indent: 10%;
+     color:#B71C1C;
+     margin: 1%;
+ }
+ #details{
+    color:#673AB7;
+	font-size:120%;
+ }
  #backg{
      border:2px solid #ddd;
      padding: 2%;
      border-radius: 3%;
+ }
+ #card{
+     margin-left:10%;
+     margin-right: 10%;
+     margin-bottom: 3%;
+ }
+ .header{
+     color:#ddd;
+     font-size: 180%;
  }
 
 
@@ -270,18 +288,7 @@ div >h5{
     margin-top : -18px;
     background-color:white !important;
 }
-#title2{
-     text-align: center;
-    padding: 1%;
-    margin:1%;
-	font-family: Comic Sans MS;
-	font-size:115%;
-	color:#D50000;
-    border:1px solid #9E9E9E;
-    background-color: #616161;
-	text-shadow:1px 1px 2px #6f0d16; 
-    
-}
+
 
 .signbtn{
     width:20%;
@@ -346,6 +353,18 @@ button a{
     border-radius:3%;
 	color:#000 !important;
 	background-color:#FFD600;
+   
+}
+.editbtn3{
+    width:20%;
+    padding: 0.8% 0.8%;
+    border: none;
+    font-size: 100%;
+    letter-spacing: 0.14em;
+    box-sizing: border-box;
+    border-radius:3%;
+	color:#000 !important;
+	background-color:#B71C1C;
    
 }
 .editbtn2{
@@ -453,8 +472,8 @@ span a{
 
 
 div > p{
-    line-height: 220%;
-    font-family: realway;
+   font-size:120%;
+   color:#B71C1C !important;    
 }
     
 
