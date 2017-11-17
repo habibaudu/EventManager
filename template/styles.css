@@ -444,12 +444,12 @@ span.psw {
     padding-bottom: 3.5px;
 }
 
-span .f{
-	color:#9E9E9E;
+ .f span{
+	color:#ddd;
 }
 
-span a{
-	color: #FFD600;
+.f a{
+	color:#FFD600;
 	text-decoration: none;
 }
 .animate{
