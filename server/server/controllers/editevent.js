@@ -15,7 +15,7 @@ eventUpdate(req,res) {
        }
      }
      return res.status(404).json({
-       message: 'Recipe not found',
+       message: 'Event not found',
        error: true
      });
    

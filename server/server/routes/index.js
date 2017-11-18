@@ -4,6 +4,7 @@ import editeventControls from '../controllers/Editevent.js';
 import deleteeventControls from '../controllers/deleteEvent.js';
 import addcenterControls from '../controllers/createCenter.js';
 import getcenterControls from '../controllers/allCenter.js';
+import getacenterControls from '../controllers/aCenter.js';
 
  module.exports = (app) => {
   
@@ -16,6 +17,7 @@ import getcenterControls from '../controllers/allCenter.js';
      app.delete('/events/:eventId',deleteeventControls.delete);
      app.post('/centers',addcenterControls.create);
       app.get('/centers',getcenterControls.getCenters);
+      app.get('/centers/:centerId',getacenterControls.getCenter);
 
    app.all('/center/:centerId/', (req, res) =>
      res.status(405).send({
