@@ -4,13 +4,13 @@ export default {
 create(req,res) {
       if (!req.body.eventType && !req.body.centerSelected && !req.body.id && !req.body.Date && !req.body.Time) {
        return res.json({
-         message: 'No recipe added',
+         message: 'No Event added',
          error: true
        });
      }
      eventsjson.push(req.body);
      return res.json({
-       message: 'Created successfully',
+       message: 'Created Event successfully',
        error: false
      });
    }
