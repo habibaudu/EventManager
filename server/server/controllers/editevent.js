@@ -9,13 +9,13 @@ eventUpdate(req,res) {
          eventsjson[i].Date = req.body.Date;
          eventsjson[i].Time = req.body.Time;
          return res.json({
-           message: 'updated sucessfully',
+           message: 'sucessfully Updated event',
            error: false
          });
        }
      }
      return res.status(404).json({
-       message: 'Recipe not found',
+       message: 'Event not found',
        error: true
      });
    
