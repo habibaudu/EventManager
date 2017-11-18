@@ -1,6 +1,8 @@
 import addeventControls from '../controllers/createEvents.js';
 import geteventControls from '../controllers/getEvents.js';
 import editeventControls from '../controllers/Editevent.js';
+import deleteeventControls from '../controllers/deleteEvent.js';
+
  module.exports = (app) => {
   
    app.get('/api', (req, res) => res.status(200).send({
@@ -9,6 +11,7 @@ import editeventControls from '../controllers/Editevent.js';
      app.get('/events',geteventControls.getEvents); 
      app.post('/events',addeventControls.create);
      app.put('/events/:eventId',editeventControls.eventUpdate);
+     app.delete('/events/:eventId',deleteeventControls.delete);
 
    app.all('/center/:centerId/', (req, res) =>
      res.status(405).send({
