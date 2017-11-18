@@ -1,7 +1,7 @@
 [
   {
     "id":1,
-    "name":"Mable Center",
+    "centerName":"Mable Center",
     "Capacity":5000,
     "Location":"No5 london street old airport road",
     "EventsSlated":["dinner party  4th december 2020  , 8pm","birthday party  7th october 2018 , 4pm"],
@@ -11,7 +11,7 @@
 
   {
     "id":2,
-    "name":"Emerald Center",
+    "centerName":"Emerald Center",
     "Capacity":1000,
     "Location":"No5 london street old airport road",
     "EventsSlated":["seminar  4th july 2019  , 10am","lecture  7th March 2020 , 9am"],
@@ -21,7 +21,7 @@
 
   {
     "id":3,
-    "name":"Topaz Center",
+    "centerName":"Topaz Center",
     "Capacity":5000,
     "Location":"No5 london street old airport road",
     "EventsSlated":["wedding Reception 4th december 2019  , 8pm"],
