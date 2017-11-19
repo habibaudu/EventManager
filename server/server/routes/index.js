@@ -1,6 +1,6 @@
 import addeventControls from '../controllers/createEvents.js';
 import geteventControls from '../controllers/getEvents.js';
-import editeventControls from '../controllers/Editevent.js';
+import editeventControls from '../controllers/editevent.js';
 import deleteeventControls from '../controllers/deleteEvent.js';
 import addcenterControls from '../controllers/createCenter.js';
 import getcenterControls from '../controllers/allCenter.js';
