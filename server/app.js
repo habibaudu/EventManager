@@ -16,7 +16,7 @@ const app = express();
 app.use(logger('dev'));
 
 /**
- * Parsing incomming request data
+ * Parsing incomming data request
  */
 
 app.use(bodyParser.json());
