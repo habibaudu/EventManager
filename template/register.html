@@ -21,7 +21,7 @@
     <!--Import jQuery before materialize.js -->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-      <nav class="purple">
+       <nav class="purple">
       <div class="nav-wrapper">
       <a href="#!" class="logo"><em>EventManager</em></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -29,14 +29,11 @@
       <ul class="right hide-on-med-and-down" >
         <li><a href="index.html" class="" >Home</a></li>
          <li><a href="addCenter.html" class="">Add Center</a></li>
-         <li><a href="details.html" class="">Centers</a></li>
           <li><a href="add.html" class="">Back</a></li>
-          <li> <div id="admin"><img src="images/admin2.png"></div></div>
       </ul>
       <ul class="side-nav" id="mobile-demo">
     <li><a href="index.html" class="" >Home</a></li>
          <li><a href="addCenter.html" class="">Add Center</a></li>
-         <li><a href="details.html" class="">Centers</a></li>
           <li><a href="add.html" class="">Back</a></li>
       </ul>
     
@@ -46,51 +43,43 @@
     $(".button-collapse").sideNav();
   </script>
 <main>
-
-    <div class="row" id="editt">
-
-    <div class="col s12 m8 l8" >
-
-    <div class="container">
-			<div class="row signup-form center-align valign-wrapper">
+  
+		<!-- Register form -->
+		<div class="container">
+			<div class="row signup-form">
 				<div class="col s12 m12">
 					<div class="card">
 						<div class="card-content">
-							<span class="card-title"><h4 class="center-heading">Add Center</h4></span>
+							<span class="card-title"><h3 class="center-heading">Register</h3></span>
 							<form class="container">
 								<div class="row">
-									<div class="input-field col s12">
-										<input id="Center" type="text" class="validate" />
-										<label for="email">Center Name</label>
+									<div class="input-field col s6">
+										<input id="first_name" type="text" class="validate" />
+										<label for="first_name">First Name</label>
+									</div>
+									<div class="input-field col s6">
+										<input id="last_name" type="text" class="validate" />
+										<label for="last_name">Last Name</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s12">
-										<input id="Cost" type="text" class="validate" />
-										<label for="Cost">Cost per Hour</label>
+										<input id="email" type="email" class="validate" />
+										<label for="email">Email</label>
 									</div>
 								</div>
-                <div class="row">
-									<div class="input-field col s12">
-										<input id="Facilities" type="text" class="validate" />
-										<label for="Facilities">Facilities</label>
+								<div class="row">
+									<div class="input-field col s6">
+										<input id="password" type="password" class="validate" />
+										<label for="password">Password</label>
 									</div>
-								</div>
-
-                <div class="row">
-									<div class="input-field col s12">
-										<input id="Capacity" type="text" class="validate" />
-										<label for="Capacity">Capacity</label>
-									</div>
-								</div>
-                 <div class="row">
-									<div class="input-field col s12">
-										<input id="Location" type="text" class="validate" />
-										<label for="Location">Location</label>
+									<div class="input-field col s6">
+										<input id="password_confirmation" type="password" class="validate" />
+										<label for="password_confirmation">Password Confirmation</label>
 									</div>
 								</div>
 								<div class="row center-align">
-									<button class="signbtn4" type="submit" name="action">Add Center
+									<button class="signbtn4" type="submit" name="action">Signup
 										<i class="material-icons right">send</i>
 									</button>
 								</div>
@@ -100,23 +89,6 @@
 				</div>
 			</div>
 		</div>
-  </div>
-      
-   
-   
-    <div class="col s12 m4 l4">
-      <div id="centerpix">
-        <img src="images/soccerview1.jpg"/>
-
-      </div>
-      <label>Upload photo :</label><input type="file" name="pic"/>
-    </div>
-    </div>
-     </div>
-   
-    
-
-
 
 </main>
   

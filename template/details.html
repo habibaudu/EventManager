@@ -21,183 +21,317 @@
     <!--Import jQuery before materialize.js -->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+       <nav class="purple">
+    <div class="nav-wrapper">
+      <a href="#!" class="logo"><em>EventManager</em></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      
+      <ul class="right hide-on-med-and-down" >
+        <li><a href="index.html" class="" >Home</a></li>
+         <li><a href="addCenter.html" class="">Add Center</a></li>
+          <li><a href="add.html" class="">Back</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+    <li><a href="index.html" class="" >Home</a></li>
+         <li><a href="addCenter.html" class="">Add Center</a></li>
+          <li><a href="add.html" class="">Back</a></li>
+      </ul>
+    
+    </div>
+  </nav>
+  <script>
+    $(".button-collapse").sideNav();
+  </script>
 <main>
-   <div class="row" >
-    <div class="col s12 m7 l7">
-    <div class="event"><em>EventManager</em></div>
+
    
-     
+    <div class="yourevent"><em>Centers</em>
+      <hr>
+    
     </div>
-    <div class="col s12 m2 l2">
-
-    </div>
-    <div class="col s12 m3 l3" >
-      <div id="chain">
-    <a href="index.html"  ><em>Home</em></a>
-     <a href="addCenter.html"><em>Add Center</em></a>
-     <a href="add.html"><em>Back</em></a>
-      </div>
-    </div>
-    </div>
-
-    <div id="eventwrapper">
-    <div class="yourevent"><em>Center Details</em></div>
-    </div>
-
-    <div class="col s12 m7" id="card">
-    <h2 class="header">Topaz Center</h2>
-    <div class="card">
-      <div class="card-image">
-        <img src="images/dinner.jpg">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>Spice up your dinner, with our state of the art dinner facilities and have a night to remember</p>
-          <ul>
-              <li id="details">Capacity :</li>
-              <li id="indent"> 500</li>
-              <li id="details">Location :</li>
-              <li id="indent">Precious stones event center No2 old airport road bau</li>
-              <li id="details">Schedule Event :</li>
-              <li id="indent">Birthday Party 15 may 2018  5pm</li>
-              <li id="indent">students gettogether 31 oct 2018 6pm</li>
-              <li id="details">Facilites and Equipments :</li>
-              <li id="indent">Air conditioner</li>
-              <li id="indent">Rest Room</li>
-              <li id="indent">Chairs and tables</li>
-              <li id="indent">Power supply</li>
-              <li id="indent">Changing Room</li>
-              <li id="indent">Parking space</li>
-              <li id="details"> per hour :</li>
-              <li id="indent">#10000</li>
-          </ul>
-        </div>
-        <div class="card-action">
-          <button class="editbtn3"><a href="editCenter.html">Edit Center</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s12 m7" id="card">
-    <h2 class="header">Mable Center </h2>
-    <div class="card ">
-      <div class="card-image">
-        <img src="images/wedding.jpg">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>Give your bride the most awesome wedding experience with  our state of the art wedding center</p>
-          <ul>
-              <li id="details">Capacity :</li>
-              <li id="indent"> 500</li>
-              <li id="details">Location :</li>
-              <li id="indent">Precious stones event center No2 old airport road bau</li>
-              <li id="details">Schedule Event :</li>
-              <li id="indent">church service 15 may 2018  7pm</li>
-              <li id="indent">wedding reception 31 oct 2018 10am</li>
-               <li id="details">Facilites and Equipments :</li>
-              <li id="indent">Air conditioner</li>
-              <li id="indent">Rest Room</li>
-              <li id="indent">Chairs and tables</li>
-              <li id="indent">Power supply</li>
-              <li id="indent">Changing Room</li>
-              <li id="indent">Parking space</li>
-              <li id="details"> per hour :</li>
-              <li id="indent">#20000</li>
-          </ul>
-        </div>
-        <div class="card-action">
-           <button class="editbtn3"><a href="editCenter.html">Edit Center</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s12 m7" id="card">
-    <h2 class="header">Emerald Center</h2>
+    <div class="row" id="cards">
+    <div class="col s12 m6 l4">  
+    
     <div class="card">
       <div class="card-image">
         <img src="images/conference.jpg">
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>Our conference hall is unparallel</p>
-          <ul>
-              <li id="details">Capacity :</li>
-              <li id="indent"> 5000</li>
-              <li id="details">Location :</li>
-              <li id="indent">Precious stones event center No2 old airport road bau</li>
-              <li id="details">Schedule Event :</li>
-              <li id="indent">Seminar 15 may 2018  5pm</li>
-              <li id="indent">students lecture 31 december 2018 6pm</li>
-               <li id="details">Facilites and Equipments :</li>
-              <li id="indent">Air conditioner</li>
-              <li id="indent">Rest Room</li>
-              <li id="indent">Chairs and tables</li>
-              <li id="indent">Power supply</li>
-              <li id="indent">Changing Room</li>
-              <li id="indent">Parking space</li>
-              <li id="details"> per hour :</li>
-              <li id="indent">#10000</li>
-          </ul>
+          <p>Emerald Center</p>
+          
         </div>
         <div class="card-action">
-           <button class="editbtn3"><a href="editCenter.html">Edit Center</a></button>
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3">View details</button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">5000</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Wedding Ceremoni</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#30000</a></div></li>
+      </ul>
+      
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="col s12 m7" id="card">
-    <h2 class="header">Diamond Center</h2>
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+    <div class="col s12 m6 l4">
     <div class="card">
       <div class="card-image">
-        <img src="images/basket.jpg">
+        <img src="images/conference.jpg">
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>Our basket ball center is like No other, facilities inspires victories</p>
-          <ul>
-              <li id="details">Capacity :</li>
-              <li id="indent"> 10000</li>
-              <li id="details">Location :</li>
-              <li id="indent">Precious stones event center No2 old airport road bau</li>
-              <li id="details">Schedule Event :</li>
-              <li id="indent">Lakers versus Lions 15 January 2018  5pm</li>
-              <li id="indent">blackcats versus lagos rats 30 November  6pm</li>
-               <li id="details">Facilites and Equipments :</li>
-              <li id="indent">Air conditioner</li>
-              <li id="indent">Rest Room</li>
-              <li id="indent">Chairs and tables</li>
-              <li id="indent">Power supply</li>
-              <li id="indent">Changing Room</li>
-              <li id="indent">Parking space</li>
-              <li id="details"> per hour :</li>
-              <li id="indent">#50000</li>
-          </ul>
+          <p>Mable Center</p>
+          
         </div>
         <div class="card-action">
-           <button class="editbtn3"><a href="editCenter.html">Edit Center</a></button>
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3">View details</button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">5000</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Dinner</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#400</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
         </div>
       </div>
     </div>
-  </div>
-  
-            
 
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+    <div class="col s12 m6 l4">
+   
+    <div class="card">
+      <div class="card-image">
+        <img src="images/conference.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>TopaZ Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3">View details</button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+     <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">5000</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Musical show</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#3000</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+
+
+        <div class="row" id="cards">
+    <div class="col s12 m6 l4">  
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/conference.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Diamond Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3">View details</button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+       <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">100</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Lecture</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#30000</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+    <div class="col s12 m6 l4">
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/conference.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Gold Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3">View details</button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+        <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">500</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Conference Meeting, seminar</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Table,chair,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#1000</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+    <div class="col s12 m6 l4">
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/conference.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Emerald Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3">View details</button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+     <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">2000</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Birthday party</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#3000</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+        </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+            
 </main>
   
     
   <!-- foter -->
-   <center><footer class=""  id="footertext">
+   <center><footer  id="footertext"><div  class="purple">
       
-    <div class="footer-copyright">
-      <div class="container" >
+    <div class="footer-copyright" >
+      <div class="container"  >
       	<span id='footertext'>© Copyright 2017. All rights reserved </span>
       </div>
     </div>
-  </footer></center>
+  </div></footer></center>
   
 </body>
 </html>

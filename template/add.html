@@ -21,75 +21,63 @@
     <!--Import jQuery before materialize.js -->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+         <nav class="purple">
+      <div class="nav-wrapper">
+      <a href="#!" class="logo"><em>EventManager</em></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      
+      <ul class="right hide-on-med-and-down" >
+        <li><a href="index.html" class="" >Home</a></li>
+         <li><a href="addCenter.html" class="">Add Center</a></li>
+         <li><a href="details.html" class="">Centers</a></li>
+          <li><a href="add.html" class="">Back</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+    <li><a href="index.html" class="" >Home</a></li>
+         <li><a href="addCenter.html" class="">Add Center</a></li>
+         <li><a href="details.html" class="">Centers</a></li>
+          <li><a href="add.html" class="">Back</a></li>
+      </ul>
+    
+    </div>
+  </nav>
+  <script>
+    $(".button-collapse").sideNav();
+  </script>
 <main>
-<div class="row" >
-    <div class="col s12 m7 l7">
-    <div class="event"><em>EventManager</em></div>
-   
-     
-    </div>
-    <div class="col s12 m2 l2">
 
-    </div>
-    <div class="col s12 m3 l3" >
-      <div id="chain">
-    <a href="index.html"  ><em>Home</em></a>
-     <a href="details.html"><em>Center Details</em></a>
-     <a href="login.html"><em>Back</em></a>
-      </div>
-    </div>
-    </div>
 
-    <div id="eventwrapper">
-    <div class="yourevent"><em>Your Events</em></div>
-    </div>
-  
-  <div class="container">
-    <div id="manual">
-    <ol class="rounded-list2">
-        <li><span><em class="eventtype">Event Type : Wedding Reception<em>
-            <ul>
-                <li>Venue: Maple center</li>
-                <li>Date: 20th November 2018</li>
-                <li>Time: 10am</li>
-            </ul>
-            <button class="editbtn" ><a href="edit.html">edit</a></button><br> <br> <button class="delete">delete</button></li>
+  <div class="container" style="max-width:700px">
+      <div class="card">
+        <div class="container">
+          <h3 class="center-heading">Add Event</h3>
+        </div>
+        <form class="card-content">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="eventtype" type="text" class="validate" />
+              <label for="event">Event-type</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
 
-        <li><span><em class="eventtype">Event Type : Dinner Party<em>
-            <ul>
-                <li>Venue: Topaz center</li>
-                <li>Date: 4th september 2018</li>
-                <li>Time: 8pm</li>
-            </ul>
-            <button class="editbtn" ><a href="edit.html">edit</a></button><br> <br> <button class="delete">delete</button></li>
-
-        
-                         
-    </ol>
-
-    </div>
-
-  </div>
-
-  <div id="eventwrapper2">
-    <div class="yourevent"><em>Add Events</em></div>
-    </div>
-
-     <div class="container" id="main3">
-     <form>
-     <input type="text" placeholder="Enter event Type" name="Type" required=""/><br>
-      <div class="input-field col s12">
-    <select>
+                <select>
       <option value="" disabled selected>Select Center</option>
       <option value="1">Maple Center</option>
       <option value="2">Topaz Center</option>
       <option value="3">Emerald Center</option>
+      <option value="1">Diamond Center</option>
+      <option value="2">Gold Center</option>
+      <option value="3">rubie Center</option>
     </select>
     
-    </div>
-
-     <div class="input-field col s12">
-    <select>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+               <select>
       <option value="" disabled selected>Select Day</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -104,9 +92,11 @@
       <option value="11">11</option>
       <option value="12">12</option>
     </select>
-    
-    </div>
-    <div class="input-field col s12">
+            
+            </div>
+          </div>
+              <div class="row">
+              <div class="input-field col s12">
     <select>
       <option value="" disabled selected>Select Month</option>
       <option value="1">Jan</option>
@@ -124,7 +114,9 @@
     </select>
     
     </div>
-    <div class="input-field col s12">
+              </div>
+ <div class="row">
+              <div class="input-field col s12">
     <select>
       <option value="" disabled selected>Select year</option>
       <option value="1">2017</option>
@@ -140,9 +132,9 @@
     </select>
     
     </div>
-
-
-     <div class="input-field col s12">
+ </div>
+ <div class="row">
+   <div class="input-field col s12">
     <select>
       <option value="" disabled selected>Select Time</option>
       <option value="1">1pm</option>
@@ -155,15 +147,23 @@
     </select>
     
     </div>
-    <script>
+   </div>
+   <script>
      $(document).ready(function() {
         $('select').material_select();
     });
   </script>
-       <button class="add" type="submit">Add Event</button>
-    </form>
 
-  </div>
+
+
+          <div class="row center-align">
+            <button class="signbtn4" type="submit" name="action">Add Event
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
 
 </main>
   
