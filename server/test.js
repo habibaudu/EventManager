@@ -22,7 +22,7 @@ describe('Events', () => {
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
-        expect(res.body.message).to.equal('No Event added');
+        expect(res.body.message).to.equal('No Event added, fill in the required filleds');
         done();
       });
   });
