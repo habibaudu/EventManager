@@ -7,7 +7,8 @@
     "start": "nodemon --watch server --exec babel-node  -- server/app.js",
     "test": "mocha --compilers js:babel-core/register server/test.js",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
-     "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec"
+    "coverage": "babel-node ./node_modules/istanbul/lib/cli cover _mocha test.js",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "author": "",
   "license": "ISC",
