@@ -45,7 +45,7 @@
     $(".button-collapse").sideNav();
   </script>
 <main>
-   <div class="container">
+   <!--<div class="container">
     <div id="manual">
     <ol class="rounded-list2">
       <div class="yourevent"><em>your Events</em>
@@ -64,7 +64,63 @@
 
     </div>
 
-  </div>
+  </div>-->
+   <div class="row" id="cards">
+    <div class="col s12 m6 l6">  
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/conference.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Emerald Center</p>
+          <li><span><em class="eventtype">Event Type : Wedding Reception<em>
+            <ul>
+                <li>Venue: Diamond center</li>
+                <li>Date: 20th November 2018</li>
+                <li>Time: 10am</li>
+            </ul>
+        </div>
+        <div class="card-action">
+          <button class="editbtn" ><a href="edit.html">edit</a></button><br> <br> <button class="delete">delete</button></li> 
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+    <div class="col s12 m6 l6">  
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/conference.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Mable Center</p>
+          <li><span><em class="eventtype">Event Type : Wedding Reception<em>
+            <ul>
+                <li>Venue: Diamond center</li>
+                <li>Date: 20th November 2018</li>
+                <li>Time: 10am</li>
+            </ul>
+          
+        </div>
+        <div class="card-action">
+          <button class="editbtn" ><a href="edit.html">edit</a></button><br> <br> <button class="delete">delete</button></li> 
+      </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
 
 
   <div class="container" style="max-width:700px">
@@ -177,7 +233,7 @@
 
 
           <div class="row center-align">
-            <button class="signbtn4" type="submit" name="action">Add Event
+            <button class="delete" type="submit" name="action"> Add Event   <i class="material-icons">add</i>
             </button>
           </div>
         </form>

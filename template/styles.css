@@ -397,7 +397,7 @@ div >h5{
     box-sizing: border-box;
     border-radius:3%;
 	color: #fff;
-    background-color: #673AB7;
+    background-color: #6f0d16;
    
 }
 .add{
@@ -422,9 +422,10 @@ button a{
     padding: 0.8% 0.8%;
     border: none;
     font-size: 100%;
+    text-align: center;
     letter-spacing: 0.14em;
     box-sizing: border-box;
-    border-radius:3%;
+    border-radius:4%;
 	color:#fff !important;
 	background-color:#673AB7;
    
@@ -547,7 +548,7 @@ span.psw {
 .logo{
     margin-left:1%;
     font-size: 270%;
-    text-shadow:  2px 2px 2px #000;
+    text-shadow:  0.5px 1px 0.5px #000;
 }
 
 #slidess{
