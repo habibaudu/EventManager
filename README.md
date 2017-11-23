@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/habibaudu/EventManager.svg?branch=challenge2)](https://travis-ci.org/habibaudu/EventManager)
+[![Build Status](https://travis-ci.org/habibaudu/EventManager.svg?branch=challenge2)](https://travis-ci.org/habibaudu/EventManager) [![Coverage Status](https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=master)](https://coveralls.io/github/habibaudu/EventManager?branch=master)
 
-<img src="https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=Lintedbranch" alt="Coverage Status" />
+
 
 
 
