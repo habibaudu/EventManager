@@ -7,8 +7,18 @@
     "start": "nodemon --watch server --exec babel-node  -- server/app.js",
     "test": "mocha --compilers js:babel-core/register server/test.js",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
-    "coverage": "babel-node ./node_modules/istanbul/lib/cli cover _mocha test.js",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +41,7 @@
     "mocha": "^3.5.3",
     "morgan": "^1.9.0",
     "nodemon": "^1.12.1",
+    "nyc": "^11.3.0",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.13.2"

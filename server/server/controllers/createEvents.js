@@ -3,15 +3,17 @@ import eventsjson from '../models/events.json';
  *
  */
 export default class CreateEvent {
-/**
-*@param {req} - users request
-*@param{res} -servers response
-@return{.json} - returns a json object
- */
+
+ 
+ /**
+  *@param {*} req
+  *@param {*} res
+  *@return {json} dfggg
+  */
  static create(req, res) {
-    if (!req.body.eventType && !req.body.centerSelected && !req.body.id && !req.body.Date && !req.body.Time) {
+    if (!req.body.eventType || !req.body.centerSelected || !req.body.id || !req.body.Date || !req.body.Time) {
       return res.json({
-        message: 'No Event added',
+        message: 'No Event added, fill in the required filleds',
         error: true
       });
     }

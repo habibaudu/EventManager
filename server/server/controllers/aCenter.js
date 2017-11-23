@@ -5,11 +5,11 @@ import centersjson from '../models/centers.json';
 
 export default class getaparticularCenter{
   /**
-   * @param{req} -users request
-   *  @param{res} -servers response
-   * @return{json} -Json object of a center details
+   * @param {req} -users request
+   *  @param {res} -servers response
+   * @return {json} -Json object of a center details
    */
-  
+
   static getCenter(req, res) {
     for (let i = 0; i < centersjson.length; i++) {
       if (centersjson[i].id === parseInt(req.params.centerId, 10)) {
