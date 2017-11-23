@@ -1,5 +1,13 @@
 [![Coverage Status](https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=master)](https://coveralls.io/github/habibaudu/EventManager?branch=master)
-https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=master(Coverage Status)!:https://coveralls.io/github/habibaudu/EventManager?branch=Lintedbranch
+https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=master(Coverage Status)!:https://coveralls.io/github/habibaudu/EventManager?branch=master
+
+{<img src="https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/habibaudu/EventManager?branch=master]
+
+<a href='https://coveralls.io/github/habibaudu/EventManager?branch=master'><img src='https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=master' alt='Coverage Status' /></a>
+
+.. image:: https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=master
+:target: https://coveralls.io/github/habibaudu/EventManager?branch=master
+
 
 
 # EventManager
