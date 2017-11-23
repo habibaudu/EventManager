@@ -4,6 +4,7 @@ node_js:
   - stable
 script:
   - npm test
+  -npm install
 after_success:
   - npm run coveralls
   - npm run report-coverage

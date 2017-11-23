@@ -30,3 +30,4 @@
   } 
 
 ]
+//  "test": "mocha --compilers js:babel-core/register server/test.js",
