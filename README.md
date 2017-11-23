@@ -1,6 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=master)]
-
-{<img src="https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=Lintedbranch" alt="Coverage Status" />}
+<img src="https://coveralls.io/repos/github/habibaudu/EventManager/badge.svg?branch=Lintedbranch" alt="Coverage Status" />
 
 
 
