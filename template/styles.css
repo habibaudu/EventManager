@@ -391,7 +391,7 @@ div >h5{
 }
 .center-heading2{
      padding: 2% 2%;
-    border:1px solid #ddd;
+    /*border:1px solid #ddd;*/
     border-radius:7%;
     text-align: center;
     text-shadow:1px 1px 1px #B71C1C;
