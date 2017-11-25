@@ -1,5 +1,7 @@
-import Users from './users';
+import signup from './signup';
+import signin from './signin';
 
 export default{
-  Users
+  signin,
+  signup
 };
