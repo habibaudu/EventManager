@@ -1,4 +1,4 @@
-import Users from './users';
+import signup from './signup';
 
 export default{
   Users
