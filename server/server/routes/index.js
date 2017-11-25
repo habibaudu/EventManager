@@ -7,8 +7,8 @@ module.exports = (app) => {
     message: 'Welcome to EventManager App!',
   }));
 
-  app.post('/users',signupControllers.register);
-  app.post('/users/login',signinControllers.login);
+  app.post('/users', signupControllers.register);
+  app.post('/users/login', signinControllers.login);
 
   app.all('/api/signup/users', (req, res) =>
     res.status(405).send({

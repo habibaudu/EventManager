@@ -1,12 +1,11 @@
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
 import models from '../models';
 
 const User = models.Users;
 
 export default {
   register(req, res) {
-     const password = bcrypt.hashSync(req.body.password, 10);
+    const password = bcrypt.hashSync(req.body.password, 10);
     return User
       .create({
         firstName: req.body.firstName,
