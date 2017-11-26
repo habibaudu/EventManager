@@ -18,7 +18,9 @@ export default {
         lastname: user.lastName,
         username: user.username,
         email: user.email, }))
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(400).send({ message: 'Invalid email address',
+        message2: 'Only string allowed for firstName lastName',
+        messsage3: 'Username and password must be alphanumeric' }));
   }
 
 };

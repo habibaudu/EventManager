@@ -8,15 +8,24 @@ module.exports = {
     },
     firstName: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        is: ['^[a-z]+$', 'i']
+      }
     },
     lastName: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        is: ['^[a-z]+$', 'i']
+      }
     },
     username: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        isAlphanumeric: true
+      }
     },
     email: {
       type: Sequelize.STRING,
@@ -27,7 +36,10 @@ module.exports = {
     },
     password: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        isAlphanumeric: true
+      }
     },
 
     status: {
