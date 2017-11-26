@@ -1,82 +1,155 @@
 import chaiHttp from 'chai-http';
 import chai, { expect } from 'chai';
-import server from './app';
+import request from 'supertest';
+import app from './app';
 
-const should = chai.should();
+const authenticatedUser = request.agent(app);
 
 chai.use(chaiHttp);
 
-describe('Events', () => {
-  it('it should GET all Events', (done) => {
-    chai.request(server)
-      .get('/events')
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
+const userCredentials = {
+  email: 'auduhabib1990@gmail.com', 
+  password: 'hba821'
+};
+const wrongCredentials = {
+  email: 'wrongemail@gmail.com', 
+  password: 'wrong123'
+};
+const halfrightCredentials = {
+  email: 'auduhabib1990@gmail.com', 
+  password: 'wrong123'
+};
+const registerCredentials = {
+  firstName:'lucas',
+  lastName:'jesse',
+  username:'luje',
+  email: 'lucasone@gmail.com', 
+  password: 'lucas'
+};
+const sentCredentials = {
+  firstname:'lucas',
+  lastname:'jesse',
+  username:'luje',
+  email: 'lucasone@gmail.com'
+};
+const incompleteregisterCredentials = {
+  firstName:'lucas',
+  lastName:'jesse',
+  email: 'lucasone@gmail.com', 
+  password: 'lucas'
+};
+
+
+describe('users', () => {
+  before((done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(userCredentials)
+      .end((err, response) => {
+        expect(response.statusCode).to.equal(200);
         done();
       });
   });
-  it('it should create an Event', (done) => {
-    chai.request(server)
-      .post('/events')
+  it('it should  post new user', (done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(userCredentials)
+      .expect('Content-type', /json/)
+      .expect(200)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('No Event added, fill in the required filleds');
+        expect(res.statusCode).to.equal(200);
         done();
       });
   });
 
-  it('should edit an event', (done) => {
-    chai.request(server)
-      .put('/events/3')
+   it('it should  return 400 for wrongCredential ', (done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(wrongCredentials)
+      .expect('Content-type', /json/)
+      .expect(400)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('sucessfully updated  event');
+        expect(res.statusCode).to.equal(400);
         done();
       });
   });
-  it('should delete an event', (done) => {
-    chai.request(server)
-      .delete('/events/1')
+it('it should  return 400 for half_rightCredentials', (done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(halfrightCredentials)
+      .expect('Content-type', /json/)
+      .expect(400)
       .end((err, res) => {
-        should.equal(err, null);
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('successfully deleted event');
+        expect(res.statusCode).to.equal(400);
+        done();
+      });
+  });
+  it('it should  return Incorrect password or email', (done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(halfrightCredentials)
+      .expect('Content-type', /json/)
+      .expect(400)
+      .end((err, res) => {
+       expect(res.body.message).to.equal('Incorrect password or email');
+        done();
+      });
+  });
+
+  it('it should  return user not found in database', (done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(wrongCredentials)
+      .expect('Content-type', /json/)
+      .expect(400)
+      .end((err, res) => {
+       expect(res.body.message).to.equal('user not found in database');
+        done();
+      });
+  });
+    it('it should  return Login was successful for good credentials', (done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(userCredentials)
+      .expect('Content-type', /json/)
+      .expect(201)
+      .end((err, res) => {
+       expect(res.body.message).to.equal('Login was successful');
         done();
       });
   });
 
 
-  it('it should GET all Centers', (done) => {
-    chai.request(server)
-      .get('/centers')
+   it('it should  return 201 for uersCredentials', (done) => {
+    authenticatedUser
+      .post('/users')
+      .send(registerCredentials)
+      .expect('Content-type', /json/)
+      .expect(200)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
+        expect(res.statusCode).to.equal(201);
         done();
       });
   });
-  it('it should create a Center', (done) => {
-    chai.request(server)
-      .post('/centers')
+  it('it should  return the credentials used to register excluding password', (done) => {
+    authenticatedUser
+      .post('/users')
+      .send(registerCredentials)
+      .expect('Content-type', /json/)
+      .expect(200)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('No Center added');
+       expect(res.body).to.deep.equal(sentCredentials);
         done();
       });
   });
-
-  it('should edit a Center', (done) => {
-    chai.request(server)
-      .put('/centers/3')
+   it('it should  return 400 for ignoring some filleds', (done) => {
+    authenticatedUser
+      .post('/users')
+      .send(incompleteregisterCredentials)
+      .expect('Content-type', /json/)
+      .expect(400)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('sucessfully updated  center');
+        expect(res.statusCode).to.equal(400);
         done();
       });
   });
