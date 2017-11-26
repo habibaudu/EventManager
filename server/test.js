@@ -11,6 +11,10 @@ const userCredentials = {
   email: 'auduhabib1990@gmail.com', 
   password: 'hba821'
 };
+const wrongCredentials = {
+  email: 'wrongemail@gmail.com', 
+  password: 'wrong123'
+};
 const registerCredentials = {
   firstName:'lucas',
   lastName:'jesse',
@@ -38,10 +42,22 @@ describe('users', () => {
       .expect(200)
       .end((err, res) => {
         expect(res.statusCode).to.equal(200);
-        // res.body.error.should.equal('user not found in database');
         done();
       });
   });
+
+   it('it should  post new user', (done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(wrongCredentials)
+      .expect('Content-type', /json/)
+      .expect(400)
+      .end((err, res) => {
+        expect(res.statusCode).to.equal(400);
+        done();
+      });
+  });
+
 
    it('it should  return 400 for wrong credentials', (done) => {
     authenticatedUser
@@ -51,7 +67,6 @@ describe('users', () => {
       .expect(200)
       .end((err, res) => {
         expect(res.statusCode).to.equal(201);
-        // res.body.error.should.equal('user not found in database');
         done();
       });
   });
