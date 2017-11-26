@@ -1,82 +1,57 @@
 import chaiHttp from 'chai-http';
 import chai, { expect } from 'chai';
-import server from './app';
+import request from 'supertest';
+import app from './app';
 
-const should = chai.should();
+const authenticatedUser = request.agent(app);
 
 chai.use(chaiHttp);
 
-describe('Events', () => {
-  it('it should GET all Events', (done) => {
-    chai.request(server)
-      .get('/events')
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
+const userCredentials = {
+  email: 'auduhabib1990@gmail.com', 
+  password: 'hba821'
+};
+const registerCredentials = {
+  firstName:'lucas',
+  lastName:'jesse',
+  username:'luje',
+  email: 'lucasone@gmail.com', 
+  password: 'lucas'
+};
+
+
+describe('users', () => {
+  before((done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(userCredentials)
+      .end((err, response) => {
+        expect(response.statusCode).to.equal(200);
         done();
       });
   });
-  it('it should create an Event', (done) => {
-    chai.request(server)
-      .post('/events')
+  it('it should  post new user', (done) => {
+    authenticatedUser
+      .post('/users/login')
+      .send(userCredentials)
+      .expect('Content-type', /json/)
+      .expect(200)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('No Event added, fill in the required filleds');
+        expect(res.statusCode).to.equal(200);
+        // res.body.error.should.equal('user not found in database');
         done();
       });
   });
 
-  it('should edit an event', (done) => {
-    chai.request(server)
-      .put('/events/3')
+   it('it should  return 400 for wrong credentials', (done) => {
+    authenticatedUser
+      .post('/users')
+      .send(registerCredentials)
+      .expect('Content-type', /json/)
+      .expect(200)
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('sucessfully updated  event');
-        done();
-      });
-  });
-  it('should delete an event', (done) => {
-    chai.request(server)
-      .delete('/events/1')
-      .end((err, res) => {
-        should.equal(err, null);
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('successfully deleted event');
-        done();
-      });
-  });
-
-
-  it('it should GET all Centers', (done) => {
-    chai.request(server)
-      .get('/centers')
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        done();
-      });
-  });
-  it('it should create a Center', (done) => {
-    chai.request(server)
-      .post('/centers')
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('No Center added');
-        done();
-      });
-  });
-
-  it('should edit a Center', (done) => {
-    chai.request(server)
-      .put('/centers/3')
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        expect(res.body.message).to.equal('sucessfully updated  center');
+        expect(res.statusCode).to.equal(201);
+        // res.body.error.should.equal('user not found in database');
         done();
       });
   });
