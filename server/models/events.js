@@ -6,17 +6,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    name: {
+    eventType: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    Ingredient: {
-      type: DataTypes.STRING,
+    centerId: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
-    Description: {
-      type: DataTypes.TEXT,
-      allowNull: false
+    dates: {
+      allowNull: false,
+      type: DataTypes.DATEONLY
     },
 
   });

@@ -41,7 +41,7 @@ server.listen(port, () => {
   console.log(`server started and runing on port ${port}`);
 });
 
-require('./server/routes')(app);
+require('./routes')(app);
 
 app.get('*', (req, res) => res.status(200).send({ message: 'Welcome To EventManager Api',
 })
