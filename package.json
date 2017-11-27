@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch server --exec babel-node  -- server/app.js",
-    "test": "nyc --reporter=html --reporter=text mocha --compilers js:babel-core/register server/test.js --timeout 90000",
+    "test": "nyc --reporter=html --reporter=text mocha --compilers js:babel-core/register server/test/test.js --timeout 90000",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "",
