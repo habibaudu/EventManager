@@ -1,5 +1,13 @@
-
+body {
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+    
+ }
  html { 
+      display: flex;
+     min-height: 100vh;
+     flex-direction: column;
   background: url('images/bg2.jpg') no-repeat center center fixed !important; 
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
@@ -16,12 +24,16 @@
 
  .think{
        font-size: 300%;
-       text-shadow:1px 1px 2px #673AB7;
+       color: #F7CA18;
+       
+       /*text-shadow:1px 1px 2px #F7CA18;*/
+      
  }
  .about{
-     font-size: 100%;
-      text-shadow:1px 1px 2px #673AB7;
-   text-align: right;
+     font-size: 120%;
+     color: #fff;
+     text-shadow:1px 1px 2px #F7CA18;
+     text-align: right;
  }
  .about2{
      font-size: 100%;
@@ -29,8 +41,8 @@
    
  }
  .purple{
-     background-color:#673AB7  !important; 
-     color:#ddd !important;
+     background-color:indigo  !important; 
+     color: #F7CA18!important;
  }
  #chain a{
      color:#ddd; 
@@ -81,18 +93,42 @@
 
 #mainform input[type=password]{
     width: 100%;
-    padding: 12px 20px;
+    padding: 6% 6%;
     margin: 8px 0;
     display: inline-block;
     color:#F7CA18;
     border:none;
+    border-radius: 2%;
     background-color:indigo;
     box-sizing: border-box;
 }
 
 #mainform input[type=text]{
     width: 100%;
-    padding: 12px 20px;
+    padding: 6% 6%;
+    margin: 8px 0;
+    color:#F7CA18;
+    border:none;
+    background-color:indigo;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+#mainform2 input[type=password]{
+    width: 100%;
+    padding: 4% 4%;
+    margin: 8px 0;
+    display: inline-block;
+    color:#F7CA18;
+    border:none;
+    border-radius: 2%;
+    background-color:indigo;
+    box-sizing: border-box;
+}
+
+#mainform2 input[type=text]{
+    width: 100%;
+    padding: 4% 4%;
     margin: 8px 0;
     color:#F7CA18;
     border:none;
@@ -101,7 +137,7 @@
     box-sizing: border-box;
 }
 #mainform{
-     margin-top: 1.5%;
+     margin-top: 4%;
 
      margin-bottom: 1.5%;   
 }
@@ -121,10 +157,27 @@
 	background:-moz-linear-gradient(#F7CA18, #302754);
     
 }
+.btn2{
+    width:60%;
+    padding:3%;
+    border: none;
+    font-size: 100%;
+    letter-spacing: 0.15em;
+    box-sizing: border-box;
+    border-radius:5%;
+	color: #fff;
+	position:relative;
+	left:20%;
+	background:linear-gradient(#F7CA18, #302754);
+	background:-o-linear-gradient(#F7CA18, #302754);
+	background:-moz-linear-gradient(#F7CA18, #302754);
+    
+}
 .register{
-     color:#000;
+     color:#F7CA18;
      text-align: center;
-     font-size: 160%;
+     font-size: 180%;
+     text-shadow:1px 1px 1px #ddd;
 }
 #main2{
     margin:3%;
@@ -195,11 +248,12 @@ ol {
 .rounded-list a{
     position: relative;
     display: block;
-    padding: 2em 2em 2em 2em;
+    padding: 3em 3em 3em 3em;
     *padding: .4em;
     margin: 1em 0;
-    background: #ddd;
-    color: #444;
+    background:white;
+    color:indigo;
+    font-size: 130%;
     text-decoration: none;
     border-radius: .3em;
     transition: all .3s ease-out;   
@@ -230,12 +284,14 @@ ol {
     border-radius: 2em;
     transition: all .3s ease-out;
 }
-
+#sepe{
+margin-top: 5%;
+}
 #manual{
 	
-	padding-left: 1%;
+	padding-left: 2%;
 	padding-right: 1%;
-	padding-bottom: 5%;
+	padding-bottom: 3%;
 }
 
 
@@ -336,7 +392,7 @@ label{
 
 }
 
-div >h5{
+#steps{
     margin-top:1%;
     width:100%;
     padding: 2% 2%;
@@ -346,7 +402,7 @@ div >h5{
     letter-spacing: 0.14em;
     text-align: center;
     box-sizing: border-box;
-	color:#000;    
+	color:#F7CA18;    
 }
 
 #ani input[type=text] {
@@ -383,7 +439,7 @@ div >h5{
     margin-top : -18px;
     
     color:#ddd !important;
-    background-color:#673AB7 !important;
+    background-color:indigo !important;
 }
 
 
@@ -435,7 +491,7 @@ div >h5{
 }
 .delete{
     width:30%;
-    padding: 1.8% 1.8%;
+    padding: 1%;
     border: none;
     font-size: 100%;
     letter-spacing: 0.14em;
@@ -443,6 +499,21 @@ div >h5{
     border-radius:6%;
 	color: #fff;
     background-color:#B71C1C;
+    float: right;
+   
+}
+
+.delete2{
+    width:30%;
+    padding: 1%;
+    border: none;
+    font-size: 100%;
+    letter-spacing: 0.14em;
+    box-sizing: border-box;
+    border-radius:6%;
+	color: #fff;
+    background-color:#B71C1C;
+
    
 }
 .add{
@@ -489,7 +560,7 @@ button a{
    
 }
 #editbtn3{
-    width:100% !important;
+    width:60% !important;
     padding: 3% !important;
     border: none  !important;;
     font-size: 100%  !important;;
@@ -497,7 +568,9 @@ button a{
     box-sizing: border-box  !important;;
     border-radius:3%  !important;;
 	color:#FFD600 !important;
-	background-color:#673AB7 !important;
+	background:linear-gradient(#302754,indigo);
+	background:-o-linear-gradient(#302754,indigo);
+	background:-moz-linear-gradient(#302754,indigo);
    
 }
 .editbtn2{
