@@ -1,9 +1,11 @@
-body {
-     display: flex;
-     min-height: 100vh;
-     flex-direction: column;
-     background-color:white;
- }
+
+ html { 
+  background: url('images/bg2.jpg') no-repeat center center fixed !important; 
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
  .moda10{
      background-color:#673AB7;
      text-align: center;
@@ -11,6 +13,7 @@ body {
      padding:2%;
      margin :0%;
  }
+
  .think{
        font-size: 300%;
        text-shadow:1px 1px 2px #673AB7;
@@ -76,13 +79,46 @@ body {
      text-align: center;
  }
 
+#mainform input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    color:#F7CA18;
+    border:none;
+    background-color:indigo;
+    box-sizing: border-box;
+}
 
-#main{
+#mainform input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color:#F7CA18;
+    border:none;
+    background-color:indigo;
+    display: inline-block;
+    box-sizing: border-box;
+}
+#mainform{
      margin-top: 1.5%;
-     border-radius:5%;
-     border:1px solid #ddd;
-     margin-bottom: 1.5%;
-     
+
+     margin-bottom: 1.5%;   
+}
+.btn{
+    width:60%;
+    padding:5%;
+    border: none;
+    font-size: 100%;
+    letter-spacing: 0.15em;
+    box-sizing: border-box;
+    border-radius:5%;
+	color: #fff;
+	position:relative;
+	left:20%;
+	background:linear-gradient(#F7CA18, #302754);
+	background:-o-linear-gradient(#F7CA18, #302754);
+	background:-moz-linear-gradient(#F7CA18, #302754);
     
 }
 .register{

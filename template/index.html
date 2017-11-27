@@ -18,7 +18,7 @@
 </script>
 </head>
 <body>
-    <!--Import jQuery before materialize.js -->
+    <!--<Import jQuery before materialize.js -->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <nav class="purple">
@@ -45,65 +45,10 @@
 <main>
 
       
-  <div class="row"  id="slidess">
-  <div class="col s12 m1 l1"></div>
-  <div class="col s12 m10 l10">
+ 
 
-     <!-- slide -->
-   
-     <div class="slider">
-    <ul class="slides" id="slidebox">
-     <li>
-        <img src="images/Malawi.jpg" class="responsive-img"/> 
-        <div class="caption center-align">
-          <h3><div class="center-heading2">Spice Up your event</div></h3>
-          <h4 class="firstslide">With Our state of the art facilities</h4>
-        </div>
-      </li>
-      <li>
-        <img src="images/dinner.jpg"> 
-        <div class="caption left-align">
-          <h3>Have an awesome dinner party</h3>
-          
-        </div>
-      </li>
-      <li>
-        <img src="images/conference.jpg"> 
-        <div class="caption left-align">
-          <h3>State of the art conference hall</h3>
-          
-        </div>
-      </li>
-      <li>
-        <img src="images/wedding.jpg"> 
-        <div class="caption right-align">
-          <h3><span class="colss">wedding to tell your children about</span></h3>
-          
-        </div>
-      </li>
-      <li>
-        <img src="images/basket.jpg"> 
-        <div class="caption right-align">
-          <h3><span class="colss">AND lots MORE</span></h3>
-          
-        </div>
-      </li>
-     
-     
-    </ul>
-  
-   <script>
-   $(document).ready(function(){
-      $('.slider').slider();
-    });
-    </script>
-      <!-- end -->
+
       
-  </div>
-   </div>
-
-  <div class="col s12 m1 l1"></div>
-</div>
 
 <div class="row" >
   
@@ -114,37 +59,15 @@
      
   </div>
   <div class="col s12 m1 l1"></div>
-  <div class="col s12 m5 l5" id="main">
-    <div class="container">
-			<div class="row signup-form center-align valign-wrapper">
-				<div class="col s12 m12">
-					<div class="card">
-						<div class="card-content">
-							<span class="card-title"><h3 class="center-heading2">Login</h3></span>
-							<form class="container">
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="email" type="email" class="validate" />
-										<label for="email">Email</label>
-									</div>
-								</div>
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="password" type="password" class="validate" />
-										<label for="password">Password</label>
-									</div>
-								</div>
-								<div class="row center-align">
-									<button class="signbtn" type="submit" name="action">Login
-										<i class="material-icons right">send</i>
-									</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+  <div class="col s12 m5 l5" id="mainform">
+     <form class="">
+      <input type="text" placeholder="Enter your email" name="Email" required=""/><br>
+      <input type="password" placeholder="Enter your Password" name="password" required=""/><br>
+      <button class="btn" type="submit">Login</button>
+    
+
+  </form>
+
   </div>
 </div>
 
