@@ -45,75 +45,104 @@
     $(".button-collapse").sideNav();
   </script>
 <main>
-   <!--<div class="container">
-    <div id="manual">
-    <ol class="rounded-list2">
-      <div class="yourevent"><em>your Events</em>
-      <hr>
-    
-    </div>
-        <li><span><em class="eventtype">Event Type : Wedding Reception<em>
-            <ul>
-                <li>Venue: Diamond center</li>
-                <li>Date: 20th November 2018</li>
-                <li>Time: 10am</li>
-            </ul>
-            <button class="editbtn" ><a href="edit.html">edit</a></button><br> <br> <button class="delete">delete</button></li>     
-                         
-    </ol>
+   
+   <div class="row">
+     
 
-    </div>
-
-  </div>-->
-   <div class="row" id="cards">
-    <div class="col s12 m6 l6">  
-    
-    <div class="card">
-      <div class="card-image">
-        <img src="images/d0.jpg">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>Emerald Center</p>
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/dinner.jpg">
+              <span class="card-title">Mable Center</span>
+            </div>
+            <div class="card-content">
+            
           <li><span><em class="eventtype">Event Type : Award presentation<em>
             <ul>
-                <li>Venue: Emerald center</li>
+                <li>Venue:Mable center</li>
+                <li>Date: 29th Apri 2017</li>
+                <li>Time: 10pm</li>
+            </ul>
+            </div>
+            <div class="card-action">
+             <button class="editbtn" ><a href="edit.html"><i class="material-icons">edit</i></a>
+          </button>  <button class="delete"><i class="material-icons">delete</i></button></li> 
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/dinner.jpg">
+              <span class="card-title">Diamond Center</span>
+            </div>
+            <div class="card-content">
+            
+          <li><span><em class="eventtype">Event Type :Musical Concert<em>
+            <ul>
+                <li>Venue: Musical center</li>
                 <li>Date: 20th March 2018</li>
                 <li>Time: 10am</li>
             </ul>
+            </div>
+            <div class="card-action">
+               <button class="editbtn" ><a href="edit.html"><i class="material-icons">edit</i></a>
+          </button>  <button class="delete"><i class="material-icons">delete</i></button></li> 
+            </div>
+          </div>
         </div>
-        <div class="card-action">
-          <button class="editbtn" ><a href="edit.html">edit<i class="material-icons">edit</i></a></button><br> <br> <button class="delete">delete<i class="material-icons">delete</i></button></li> 
-      </div>
-    </div>
 
-    </div>
-    </div>
-
-    <div class="col s12 m6 l6">  
-    
-    <div class="card">
-      <div class="card-image">
-        <img src="images/d0.jpg">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>Rubi Center</p>
-          <li><span><em class="eventtype">Event Type : BasketBall match<em>
+        
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/dinner.jpg">
+              <span class="card-title">Emerald Center</span>
+            </div>
+            <div class="card-content">
+        
+          <li><span><em class="eventtype">Event Type : Wedding Reception<em>
             <ul>
-                <li>Venue: Rubi center</li>
-                <li>Date: 20th April 2020</li>
-                <li>Time: 12am</li>
+                <li>Venue: Emerald center</li>
+                <li>Date: 1st March 2019</li>
+                <li>Time: 11am</li>
             </ul>
-          
+            </div>
+            <div class="card-action">
+               <button class="editbtn" ><a href="edit.html"><i class="material-icons">edit</i></a>
+          </button>  <button class="delete"><i class="material-icons">delete</i></button></li> 
+            </div>
+          </div>
         </div>
-        <div class="card-action">
-          <button class="editbtn" ><a href="edit.html">edit<i class="material-icons">edit</i></a></button><br> <br> <button class="delete">delete<i class="material-icons">delete</i></button></li> 
-      </div>
-    </div>
 
-    </div>
-    </div>
+        
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/dinner.jpg">
+              <span class="card-title">rubie Center</span>
+            </div>
+            <div class="card-content">
+              
+          <li><span><em class="eventtype">Event Type : Award presentation<em>
+            <ul>
+                <li>Venue: rubie Center</li>
+                <li>Date: 15th August 2019</li>
+                <li>Time: 10am</li>
+            </ul>
+            </div>
+            <div class="card-action">
+               <button class="editbtn" ><a href="edit.html"><i class="material-icons">edit</i></a>
+          </button>  <button class="delete"><i class="material-icons">delete</i></button></li> 
+            </div>
+          </div>
+        </div>
+
+       
+   
     </div>
     <script>
     $(document).ready(function(){
@@ -122,22 +151,18 @@
       });
   </script>
 
+  <div class="container">
+			
+		<form class="">
+    <div class="register">
+      Add Event 
+    </div>
 
-  <div class="container" style="max-width:1000px">
-      <div class="card">
-        <div class="container">
-          <h4 class="center-heading2">Add Event</h4>
-        </div>
-        <form class="card-content">
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="eventtype" type="text" class="validate" />
-              <label for="event">Event-type</label>
-            </div>
-          
-            <div class="input-field col s6">
+    <div id="mainform2">
+      <input type="text" placeholder="Event-type" name="first" required=""/><br>
+        <div class="input-field col s6">
 
-                <select>
+                <select >
       <option value="" disabled selected>Select Center</option>
       <option value="1">Maple Center</option>
       <option value="2">Topaz Center</option>
@@ -149,9 +174,7 @@
     
               
             </div>
-         
-    
-            <div class="input-field col s6">
+      <div class="input-field col s6">
                <select>
       <option value="" disabled selected>Select Day</option>
       <option value="1">1</option>
@@ -169,9 +192,7 @@
     </select>
             
             </div>
-        
-            
-              <div class="input-field col s6">
+      <div class="input-field col s6">
     <select>
       <option value="" disabled selected>Select Month</option>
       <option value="1">Jan</option>
@@ -189,9 +210,7 @@
     </select>
     
     </div>
-             
-
-              <div class="input-field col s6">
+      <div class="input-field col s6">
     <select>
       <option value="" disabled selected>Select year</option>
       <option value="1">2017</option>
@@ -208,7 +227,7 @@
     
     </div>
 
-
+    
    <div class="input-field col s6">
     <select>
       <option value="" disabled selected>Select Time</option>
@@ -222,23 +241,19 @@
     </select>
     
     </div>
-   </div>
+
+      <button class="btn2" type="submit"><i class="material-icons">add</i></button>
+    </div>
+			</form>
+		</div>
+
+
+ 
    <script>
      $(document).ready(function() {
         $('select').material_select();
     });
   </script>
-
-
-
-          <div class="row right-align">
-            <button class="delete" type="submit" name="action"> Add Event<i class="material-icons">add</i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
 
 </main>
   
