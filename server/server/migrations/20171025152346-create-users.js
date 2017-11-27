@@ -25,23 +25,24 @@ module.exports = {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        isEmail: true
+        isEmail: {
+          args: true,
+          msg: 'Email address already in use!'
+        },
+        unique: true
       },
-      unique: {
-        args: true,
-        msg: 'Email address already in use!'
-      }
     },
+
     password: {
       type: Sequelize.STRING,
       allowNull: false
 
     },
-
-    status: {
-      type: Sequelize.ENUM('active', 'inactive'),
-      defaultValue: 'active'
+    role: {
+      type: Sequelize.ENUM('admin', 'user'),
+      defaultValue: 'user'
     },
+
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE

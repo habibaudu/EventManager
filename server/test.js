@@ -8,34 +8,34 @@ const authenticatedUser = request.agent(app);
 chai.use(chaiHttp);
 
 const userCredentials = {
-  email: 'auduhabib1990@gmail.com', 
+  email: 'auduhabib1990@gmail.com',
   password: 'hba821'
 };
 const wrongCredentials = {
-  email: 'wrongemail@gmail.com', 
+  email: 'wrongemail@gmail.com',
   password: 'wrong123'
 };
 const halfrightCredentials = {
-  email: 'auduhabib1990@gmail.com', 
+  email: 'auduhabib1990@gmail.com',
   password: 'wrong123'
 };
 const registerCredentials = {
-  firstName:'lucas',
-  lastName:'jesse',
-  username:'luje',
-  email: 'lucasone@gmail.com', 
+  firstName: 'lucas',
+  lastName: 'jesse',
+  username: 'luje',
+  email: 'lucasone@gmail.com',
   password: 'lucas'
 };
 const sentCredentials = {
-  firstname:'lucas',
-  lastname:'jesse',
-  username:'luje',
+  firstname: 'lucas',
+  lastname: 'jesse',
+  username: 'luje',
   email: 'lucasone@gmail.com'
 };
 const incompleteregisterCredentials = {
-  firstName:'lucas',
-  lastName:'jesse',
-  email: 'lucasone@gmail.com', 
+  firstName: 'lucas',
+  lastName: 'jesse',
+  email: 'lucasone@gmail.com',
   password: 'lucas'
 };
 
@@ -62,7 +62,7 @@ describe('users', () => {
       });
   });
 
-   it('it should  return 400 for wrongCredential ', (done) => {
+  it('it should  return 400 for wrongCredential ', (done) => {
     authenticatedUser
       .post('/users/login')
       .send(wrongCredentials)
@@ -73,7 +73,7 @@ describe('users', () => {
         done();
       });
   });
-it('it should  return 400 for half_rightCredentials', (done) => {
+  it('it should  return 400 for half_rightCredentials', (done) => {
     authenticatedUser
       .post('/users/login')
       .send(halfrightCredentials)
@@ -91,7 +91,7 @@ it('it should  return 400 for half_rightCredentials', (done) => {
       .expect('Content-type', /json/)
       .expect(400)
       .end((err, res) => {
-       expect(res.body.message).to.equal('Incorrect password or email');
+        expect(res.body.message).to.equal('Incorrect password or email');
         done();
       });
   });
@@ -103,24 +103,24 @@ it('it should  return 400 for half_rightCredentials', (done) => {
       .expect('Content-type', /json/)
       .expect(400)
       .end((err, res) => {
-       expect(res.body.message).to.equal('user not found in database');
+        expect(res.body.message).to.equal('user not found in database');
         done();
       });
   });
-    it('it should  return Login was successful for good credentials', (done) => {
+  it('it should  return Login was successful for good credentials', (done) => {
     authenticatedUser
       .post('/users/login')
       .send(userCredentials)
       .expect('Content-type', /json/)
       .expect(201)
       .end((err, res) => {
-       expect(res.body.message).to.equal('Login was successful');
+        expect(res.body.message).to.equal('Login was successful');
         done();
       });
   });
 
 
-   it('it should  return 201 for uersCredentials', (done) => {
+  it('it should  return 201 for uersCredentials', (done) => {
     authenticatedUser
       .post('/users')
       .send(registerCredentials)
@@ -138,11 +138,11 @@ it('it should  return 400 for half_rightCredentials', (done) => {
       .expect('Content-type', /json/)
       .expect(200)
       .end((err, res) => {
-       expect(res.body).to.deep.equal(sentCredentials);
+        expect(res.body).to.deep.equal(sentCredentials);
         done();
       });
   });
-   it('it should  return 400 for ignoring some filleds', (done) => {
+  it('it should  return 400 for ignoring some filleds', (done) => {
     authenticatedUser
       .post('/users')
       .send(incompleteregisterCredentials)

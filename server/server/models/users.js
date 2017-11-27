@@ -8,8 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false,
-
+      allowNull: false
 
     },
     lastName: {
@@ -26,12 +25,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isEmail: true
+        isEmail: {
+          args: true,
+          msg: 'Email address already in use!'
+        },
+        unique: true
       },
-      unique: {
-        args: true,
-        msg: 'Email address already in use!'
-      }
     },
     password: {
       type: DataTypes.STRING,
@@ -43,8 +42,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.ENUM('active', 'inactive'),
       defaultValue: 'active'
     },
-  });
 
+  });
   Users.associate = models =>
     Users.hasMany(models.Events, {
       foreignKey: 'userId',
@@ -52,3 +51,5 @@ module.exports = (sequelize, DataTypes) => {
     });
   return Users;
 };
+
+
