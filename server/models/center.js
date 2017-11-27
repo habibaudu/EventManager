@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     Facilities: {
-      type: DataTypes.ARRAY(sequelize.TEXT),
+      type: DataTypes.ARRAY(DataTypes.TEXT),
       allowNull: false
     },
     status: {
