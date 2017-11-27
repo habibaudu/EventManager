@@ -1,0 +1,173 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta  http-equiv="X-UA-compatible" content="IE=edge" />
+<meta charset ="utf-8"/>
+<title>EventManager</title>
+
+ <!--Import Google Icon Font  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Import materialize.css  -->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet"  href="styles.css" type="text/css"/>
+
+<script>
+
+</script>
+</head>
+<body>
+    <!--Import jQuery before materialize.js -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <nav class="purple">
+      <div class="nav-wrapper">
+      <a href="#!" class="logo"><em>EventManager</em></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      
+      <ul class="right hide-on-med-and-down" >
+        <li><a href="index.html" class="" >Home</a></li>
+         <li><a href="addCenter.html" class="">Add Center</a></li>
+          <li><a href="add.html" class="">Back</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+    <li><a href="index.html" class="" >Home</a></li>
+         <li><a href="addCenter.html" class="">Add Center</a></li>
+          <li><a href="add.html" class="">Back</a></li>
+      </ul>
+    
+    </div>
+  </nav>
+  <script>
+    $(".button-collapse").sideNav();
+  </script>
+<main>
+   <div class="row" id="cards">
+     <div class="col s12 m1 l1"> </div>
+    <div class="col s12 m10 l10">  
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/wedding.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Emerald Center</p>
+          <div class="row">
+									<div class="input-field col s6">
+										<input id="Wedding Reception" type="text" class="validate" />
+										<label for="Wedding Reception">Wedding Reception</label>
+									</div>
+			<div class="input-field col s6"> 
+
+      <form>
+    <select>
+      <option value="" disabled selected>Wedding Center</option>
+      <option value="1">Mable Center</option>
+      <option value="2">Emerald Center</option>
+      <option value="3">Diamond Center</option>
+      <option value="3">Topaz Center</option>
+      <option value="3">Rubi Center</option>
+     
+    </select>
+    
+    </div>
+     <div class="input-field col s4">
+    <select>
+      <option value="" disabled selected>20</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    
+    </div>
+      <div class="input-field col s4">
+    <select>
+      <option value="" disabled selected>November</option>
+      <option value="1">Jan</option>
+      <option value="2">Feb</option>
+      <option value="3">Mar</option>
+      <option value="4">Apr</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">Jul</option>
+      <option value="8">August</option>
+      <option value="9">september</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+    
+    </div>
+    <div class="input-field col s4">
+    <select>
+      <option value="" disabled selected>2018</option>
+      <option value="1">2017</option>
+      <option value="2">2018</option>
+      <option value="3">2019</option>
+      <option value="4">2020</option>
+      <option value="5">2021</option>
+      <option value="6">2022</option>
+      <option value="7">2023</option>
+      <option value="8">2024</option>
+      <option value="9">2025</option>
+
+    </select>
+    
+    </div>
+    <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>10am</option>
+      <option value="1">1pm</option>
+      <option value="2">6am</option>
+      <option value="3">10pm</option>
+      <option value="4">12noon</option>
+      <option value="5">4pm</option>
+      <option value="6">9am</option>
+    
+    </select>
+    
+    </div>
+								</div>
+         
+        </div>
+        <div class="card-action">
+         <button class="delete2">submit</button> 
+      </div>
+    </div>
+   
+    
+     </form>
+     <script>
+      $(document).ready(function() {
+        $('select').material_select();
+    });
+  </script>
+    <div class="col s12 m1 l1"> </div>
+
+    </div>
+</main>
+  
+    
+  <!-- foter -->
+   <center><footer class=""  id="footertext">
+      
+    <div class="footer-copyright">
+      <div class="container" >
+      	<span id='footertext'>© Copyright 2017. All rights reserved </span>
+      </div>
+    </div>
+  </footer></center>
+  
+</body>
+</html>

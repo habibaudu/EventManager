@@ -1,0 +1,337 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta  http-equiv="X-UA-compatible" content="IE=edge" />
+<meta charset ="utf-8"/>
+<title>EventManager</title>
+
+ <!--Import Google Icon Font  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Import materialize.css  -->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet"  href="styles.css" type="text/css"/>
+
+<script>
+
+</script>
+</head>
+<body>
+    <!--Import jQuery before materialize.js -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+       <nav class="purple">
+    <div class="nav-wrapper">
+      <a href="#!" class="logo"><em>EventManager</em></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      
+      <ul class="right hide-on-med-and-down" >
+        <li><a href="index.html" class="" >Home</a></li>
+         <li><a href="addCenter.html" class="">Add Center</a></li>
+          <li><a href="add.html" class="">Back</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+    <li><a href="index.html" class="" >Home</a></li>
+         <li><a href="addCenter.html" class="">Add Center</a></li>
+          <li><a href="add.html" class="">Back</a></li>
+      </ul>
+    
+    </div>
+  </nav>
+  <script>
+    $(".button-collapse").sideNav();
+  </script>
+<main>
+
+   
+    <div class="register"><em>Centers</em>
+      <hr>
+    
+    </div>
+    <div class="row" id="cards">
+    <div class="col s12 m6 l4">  
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/conference.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Emerald Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3"><i class="material-icons">explore</i></button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">5000</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Wedding Ceremoni</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#30000</a></div></li>
+      </ul>
+      
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+    <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/conference.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Mable Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3"><i class="material-icons">explore</i></button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">5000</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Dinner</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#400</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+    <div class="col s12 m6 l4">
+   
+    <div class="card">
+      <div class="card-image">
+        <img src="images/conference.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>TopaZ Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3"><i class="material-icons ">explore</i></button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+     <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">5000</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Musical show</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#3000</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+
+
+        <div class="row" id="cards">
+    <div class="col s12 m6 l4">  
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/d3.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Diamond Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3"><i class="material-icons">explore</i></button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+       <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">100</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Lecture</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#30000</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+    <div class="col s12 m6 l4">
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/d3.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Gold Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3"><i class="material-icons">explore</i></button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+        <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">500</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Conference Meeting, seminar</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Table,chair,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#1000</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+    <div class="col s12 m6 l4">
+    
+    <div class="card">
+      <div class="card-image">
+        <img src="images/d3.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Emerald Center</p>
+          
+        </div>
+        <div class="card-action">
+          
+   <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger"  id="editbtn3"><i class="material-icons">explore</i></button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+     <ul class="collection with-header">
+        <li class="collection-header"><span class="center-heading"><h4>Center Details</h4></span></li>
+        <li class="collection-item"><div>Capacity :<a href="#!" class="secondary-content">2000</a></div></li>
+        <li class="collection-item"><div>Location:<a href="#!" class="secondary-content">Precious stones event center No2 old airport road </a></div></li>
+        <li class="collection-item"><div>Event Slated:<a href="#!" class="secondary-content">Birthday party</a></div></li>
+        <li class="collection-item"><div>Facilites:<a href="#!" class="secondary-content">Air Condition, Power supply,Rest room</a></div></li>
+        <li class="collection-item"><div>Cost per hour:<a href="#!" class="secondary-content">#3000</a></div></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="editCenter.html" class="modal-action modal-close waves-effect waves-green btn-flat">Edit Center</a>
+    </div>
+  </div>
+           <!--<button class="editbtn3"><a href="editCenter.html">view details</a></button>-->
+        </div>
+      </div>
+    </div>
+
+    </div>
+        </div>
+    <script>
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+      });
+  </script>
+            
+</main>
+  
+    
+  <!-- foter -->
+   <center><footer  id="footertext"><div  class="purple">
+      
+    <div class="footer-copyright" >
+      <div class="container"  >
+      	<span id='footertext'>© Copyright 2017. All rights reserved </span>
+      </div>
+    </div>
+  </div></footer></center>
+  
+</body>
+</html>
