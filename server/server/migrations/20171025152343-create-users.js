@@ -8,38 +8,34 @@ module.exports = {
     },
     firstName: {
       type: Sequelize.STRING,
-      allowNull: false,
-      validate: {
-        is: ['^[a-z]+$', 'i']
-      }
+      allowNull: false
+
     },
     lastName: {
       type: Sequelize.STRING,
-      allowNull: false,
-      validate: {
-        is: ['^[a-z]+$', 'i']
-      }
+      allowNull: false
+
     },
     username: {
       type: Sequelize.STRING,
-      allowNull: false,
-      validate: {
-        isAlphanumeric: true
-      }
+      allowNull: false
+
     },
     email: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
         isEmail: true
+      },
+      unique: {
+        args: true,
+        msg: 'Email address already in use!'
       }
     },
     password: {
       type: Sequelize.STRING,
-      allowNull: false,
-      validate: {
-        isAlphanumeric: true
-      }
+      allowNull: false
+
     },
 
     status: {
