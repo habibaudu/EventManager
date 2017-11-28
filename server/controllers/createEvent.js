@@ -1,7 +1,6 @@
 import models from '../models';
 
 const Event = models.Events;
-console.log(models.Events);
 
 export default {
   createEvents(req, res) {
