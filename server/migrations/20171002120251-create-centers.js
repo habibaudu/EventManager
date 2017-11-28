@@ -5,6 +5,7 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER
     },
+    
 
     centerName: {
       type: Sequelize.STRING,
@@ -19,7 +20,7 @@ module.exports = {
       allowNull: false
     },
     status: {
-      type: Sequelize.ENUM('Available', 'Not Available'),
+      type: Sequelize.ENUM('Available', 'UnAvailable'),
       defaultValue: 'Available'
     },
 

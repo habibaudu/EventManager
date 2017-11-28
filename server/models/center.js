@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
+    userId: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
     centerName: {
       type: DataTypes.STRING,
       allowNull: false
@@ -18,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     status: {
-      type: DataTypes.ENUM('Available', 'Not Available'),
-      defaultValue: 'active'
+      type: DataTypes.ENUM('Available', 'UnAvailable'),
+      defaultValue: 'Available'
     },
 
   });

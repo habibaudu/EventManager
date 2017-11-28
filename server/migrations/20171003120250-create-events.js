@@ -9,10 +9,12 @@ module.exports = {
       allowNull: false,
       type: Sequelize.STRING
     },
+
     centerId: {
       allowNull: false,
       type: Sequelize.STRING
     },
+
 	  dates: {
       allowNull: false,
       type: Sequelize.DATEONLY
