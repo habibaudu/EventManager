@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     Facilities: {
+      defaultValue: [],
       type: DataTypes.ARRAY(DataTypes.TEXT),
       allowNull: false
     },

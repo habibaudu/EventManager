@@ -1,17 +1,17 @@
-import models from '../models';
+import { Center } from '../models';
 
-const Centers = models.Center;
-console.log(models.Centers);
-console.log(typeof Centers);
 export default {
   createCenter(req, res) {
-    console.log(req.body);
-    const { centerName, userId, Location, Facilities, } = req.body;
-      console.log(req.body.centerName);
-    return Centers
-      .create({ centerName, userId, Location, Facilities, })
-      .then(center => res.status(201).send(center))
-      .catch(error => res.status(400).send(error));
+    const newCenter = req.body;
+    // const { centerName, userId, Location, Facilities } = newCenter;
+    Center.create(newCenter)
+      .then((center) => {
+        console.log('center: ', center);
+        // res.status(201).send(center);
+      });
+      // .catch((error) => {
+      //   res.status(400).json('center not created');
+      // });
   },
 };
 

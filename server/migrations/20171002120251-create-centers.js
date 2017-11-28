@@ -5,7 +5,10 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER
     },
-    
+    userId: {
+      allowNull: false,
+      type: Sequelize.STRING
+    },
 
     centerName: {
       type: Sequelize.STRING,
@@ -16,6 +19,7 @@ module.exports = {
       allowNull: false
     },
     Facilities: {
+      defaultValue: [],
       type: Sequelize.ARRAY(Sequelize.TEXT),
       allowNull: false
     },
