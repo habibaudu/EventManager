@@ -25,12 +25,8 @@ module.exports = {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        isEmail: {
-          args: true,
-          msg: 'Email address already in use!'
-        },
-        unique: true
-      },
+        isEmail: true
+      }
     },
 
     password: {

@@ -2,6 +2,8 @@ import controller from '../controllers';
 
 const signinControllers = controller.signin;
 const signupControllers = controller.signup;
+const createEventControllers = controller.createEvent;
+
 module.exports = (app) => {
   app.get('/api', (req, res) => res.status(200).send({
     message: 'Welcome to EventManager App!',
@@ -9,6 +11,7 @@ module.exports = (app) => {
 
   app.post('/users', signupControllers.register);
   app.post('/users/login', signinControllers.login);
+  app.post('/events', createEventControllers.createEvents);
 
   app.all('/api/signup/users', (req, res) =>
     res.status(405).send({

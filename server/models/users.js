@@ -25,22 +25,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isEmail: {
-          args: true,
-          msg: 'Email address already in use!'
-        },
-        unique: true
-      },
+        isEmail: true
+      }
     },
+
     password: {
       type: DataTypes.STRING,
       allowNull: false
 
     },
 
-    status: {
-      type: DataTypes.ENUM('active', 'inactive'),
-      defaultValue: 'active'
+    role: {
+      type: DataTypes.ENUM('admin', 'user'),
+      defaultValue: 'user'
     },
 
   });
@@ -51,5 +48,4 @@ module.exports = (sequelize, DataTypes) => {
     });
   return Users;
 };
-
 
