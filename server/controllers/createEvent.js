@@ -1,18 +1,16 @@
 import models from '../models';
 
-const Events = models.Events;
+const Event = models.Events;
 console.log(models.Events);
 
 export default {
   createEvents(req, res) {
-    return Events
-      .create({
-        eventType: req.body.eventType,
-        centerId: req.body.centerId,
-        dates: req.body.dates
-      })
+    console.log(req.body);
+    const { eventType, centerId, dates } = req.body;
+    return Event
+      .create({ eventType, centerId, dates })
       .then(events => res.status(201).send(events))
-      .catch(error => res.status(400).send('not created'));
+      .catch(error => res.status(400).send(error));
   },
 };
 
