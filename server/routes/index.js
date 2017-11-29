@@ -5,6 +5,7 @@ const signupControllers = controller.signup;
 const createEventControllers = controller.createEvent;
 const createCenterControllers = controller.createCenter;
 const allCenterControllers = controller.allCenter;
+const getacenterControllers = controller.aCenter;
 
 
 module.exports = (app) => {
@@ -17,6 +18,7 @@ module.exports = (app) => {
   app.post('/api/events', createEventControllers.createEvents);
   app.post('/api/centers', createCenterControllers.createCenter);
   app.get('/api/centers', allCenterControllers.getCenter);
+  app.get('/api/centers/:centerId', getacenterControllers.getAcenter);
  
 
   app.all('/api/signup/users', (req, res) =>

@@ -3,6 +3,7 @@ import signin from './signin';
 import createEvent from './createEvent';
 import createCenter from './createCenter';
 import allCenter from './allCenter';
+import aCenter from './aCenter';
 
 
 export default{
@@ -10,5 +11,6 @@ export default{
   signup,
   createEvent,
   createCenter,
-  allCenter
+  allCenter,
+  aCenter
 };
