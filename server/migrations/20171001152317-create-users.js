@@ -15,11 +15,6 @@ module.exports = {
       allowNull: false
 
     },
-    username: {
-      type: Sequelize.STRING,
-      allowNull: false
-
-    },
     email: {
       type: Sequelize.STRING,
       allowNull: false,
@@ -27,7 +22,6 @@ module.exports = {
         isEmail: true
       }
     },
-
     password: {
       type: Sequelize.STRING,
       allowNull: false
@@ -37,7 +31,6 @@ module.exports = {
       type: Sequelize.ENUM('admin', 'user'),
       defaultValue: 'user'
     },
-
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE

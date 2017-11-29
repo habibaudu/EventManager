@@ -18,7 +18,7 @@ export default{
         if (bcrypt.compareSync(req.body.password, user.password)) {
           // create token
           const token = jwt.sign({
-            username: user.username
+            password: user.password
           }, app.get('superSecret'), { expiresIn: 86400 }
           );
           message = 'Login was successful';

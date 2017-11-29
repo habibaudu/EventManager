@@ -5,10 +5,6 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER
     },
-    userId: {
-      allowNull: false,
-      type: Sequelize.STRING
-    },
 
     centerName: {
       type: Sequelize.STRING,
@@ -18,11 +14,16 @@ module.exports = {
       type: Sequelize.STRING,
       allowNull: false
     },
-    Facilities: {
-      defaultValue: [],
-      type: Sequelize.ARRAY(Sequelize.TEXT),
+    Capacity: {
+      type: Sequelize.INTEGER,
       allowNull: false
     },
+
+    price: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+
     status: {
       type: Sequelize.ENUM('Available', 'UnAvailable'),
       defaultValue: 'Available'
@@ -36,6 +37,17 @@ module.exports = {
       allowNull: false,
       type: Sequelize.DATE
     },
+
+    userId: {
+      type: Sequelize.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Users',
+        key: 'id',
+        as: 'userId',
+      },
+    },
   }),
+
   down: (queryInterface, Sequelize) => queryInterface.dropTable('Centers')
 };

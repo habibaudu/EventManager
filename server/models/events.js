@@ -3,28 +3,32 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       autoIncrement: true,
       primaryKey: true,
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     eventType: {
       type: DataTypes.STRING,
       allowNull: false
     },
+    eventDate: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
     centerId: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    dates: {
-      allowNull: false,
-      type: DataTypes.DATEONLY
-    },
 
+    status: {
+      type: DataTypes.ENUM,
+      values: ['NotAvailable', 'Available'],
+    }
   });
-
-  Events.associate = models =>
-    Events.belongsTo(models.Users, {
-      foreignKey: 'userId',
-      onDelete: 'CASCADE',
+  Events.associate = (models) => {
+    Events.belongsTo(models.Center, {
+      foreignKey: 'centerId',
+      onDelete: 'CASCADE'
     });
-
+  };
   return Events;
 };

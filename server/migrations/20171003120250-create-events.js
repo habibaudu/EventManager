@@ -10,14 +10,13 @@ module.exports = {
       type: Sequelize.STRING
     },
 
-    centerId: {
-      allowNull: false,
-      type: Sequelize.STRING
+    eventDate: {
+      type: Sequelize.STRING,
+      allowNull: false
     },
-
-	  dates: {
-      allowNull: false,
-      type: Sequelize.DATEONLY
+    status: {
+      type: Sequelize.ENUM,
+      values: ['NotAvailable', 'Available'],
     },
 
     createdAt: {
