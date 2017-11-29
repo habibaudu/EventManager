@@ -4,6 +4,7 @@ import createEvent from './createEvent';
 import createCenter from './createCenter';
 import allCenter from './allCenter';
 import aCenter from './aCenter';
+import modifyCenter from './modifyCenter';
 
 
 export default{
@@ -12,5 +13,6 @@ export default{
   createEvent,
   createCenter,
   allCenter,
-  aCenter
+  aCenter,
+  modifyCenter
 };

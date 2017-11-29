@@ -6,6 +6,7 @@ const createEventControllers = controller.createEvent;
 const createCenterControllers = controller.createCenter;
 const allCenterControllers = controller.allCenter;
 const getacenterControllers = controller.aCenter;
+const modifycenterControllers = controller.modifyCenter;
 
 
 module.exports = (app) => {
@@ -19,7 +20,8 @@ module.exports = (app) => {
   app.post('/api/centers', createCenterControllers.createCenter);
   app.get('/api/centers', allCenterControllers.getCenter);
   app.get('/api/centers/:centerId', getacenterControllers.getAcenter);
- 
+  app.put('/api/centers/:centerId', modifycenterControllers.update);
+
 
   app.all('/api/signup/users', (req, res) =>
     res.status(405).send({
