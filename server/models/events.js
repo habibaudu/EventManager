@@ -1,9 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Events = sequelize.define('Events', {
-    id: {
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
+    centerId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     eventType: {
       type: DataTypes.STRING,
@@ -14,14 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
 
-    centerId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-
     status: {
       type: DataTypes.ENUM,
       values: ['NotAvailable', 'Available'],
+      default: 'Available'
     }
   });
   Events.associate = (models) => {

@@ -10,7 +10,7 @@ export default {
     Events
       .create({ eventType, centerId, eventDate, userId })
       .then(events => res.status(201).send(events))
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(400).send(error.toString()));
   },
 };
 

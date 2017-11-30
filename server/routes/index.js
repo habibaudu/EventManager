@@ -1,5 +1,6 @@
 import controller from '../controllers';
 import auth from '../auth/authroutes';
+import Check from './validation';
 
 const signinControllers = controller.signin;
 const signupControllers = controller.signup;
@@ -17,10 +18,10 @@ module.exports = (app) => {
     message: 'Welcome to EventManager App!',
   }));
 
-  app.post('/api/users', signupControllers.register);
-  app.post('/api/users/login', signinControllers.login);
-  app.post('/api/events', auth, createEventControllers.createEvents);
-  app.post('/api/centers', auth, createCenterControllers.createCenter);
+  app.post('/api/users', Check.signup, signupControllers.register);
+  app.post('/api/users/login', Check.signin, signinControllers.login);
+  app.post('/api/events', auth, Check.Events, createEventControllers.createEvents);
+  app.post('/api/centers', auth, Check.center, createCenterControllers.createCenter);
   app.get('/api/centers', auth, allCenterControllers.getCenter);
   app.get('/api/centers/:centerId', auth, getacenterControllers.getAcenter);
   app.put('/api/centers/:centerId', auth, modifycenterControllers.update);

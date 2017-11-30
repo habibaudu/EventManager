@@ -1,10 +1,5 @@
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('Events', {
-    id: {
-      autoIncrement: true,
-      primaryKey: true,
-      type: Sequelize.INTEGER
-    },
     eventType: {
       allowNull: false,
       type: Sequelize.STRING
@@ -17,6 +12,7 @@ module.exports = {
     status: {
       type: Sequelize.ENUM,
       values: ['NotAvailable', 'Available'],
+      default: 'Available'
     },
 
     createdAt: {

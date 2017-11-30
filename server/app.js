@@ -2,6 +2,8 @@ import express from 'express';
 import http from 'http';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
+
+const expressValidator = require('express-validator');
 /**
  * set up app server
  */
@@ -22,6 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator());
 
 
 /**
