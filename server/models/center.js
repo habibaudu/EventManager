@@ -3,8 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       autoIncrement: true,
       primaryKey: true,
-      type: DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.INTEGER
     },
     centerName: {
       type: DataTypes.STRING,
@@ -14,22 +13,28 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    Facilities: {
-      type: DataTypes.ARRAY(DataTypes.TEXT),
+
+    Capacity: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
-    status: {
-      type: DataTypes.ENUM('Available', 'Not Available'),
-      defaultValue: 'active'
+
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
 
+    status: {
+      type: DataTypes.ENUM('Available', 'UnAvailable'),
+      defaultValue: 'Available'
+    },
   });
-
-  Center.associate = models =>
-    Center.hasMany(models.Events, {
-      foreignKey: 'centerId',
-      onDelete: 'CASCADE',
+  Center.associate = (models) => {
+    Center.belongsTo(models.Users, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE'
     });
-
+  };
   return Center;
 };
+

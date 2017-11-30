@@ -10,6 +10,7 @@ app.set('superSecret', config.secret);
 const User = models.Users;
 export default{
   login(req, res) {
+   
     let message;
     User
       .findOne({ where: {
@@ -18,7 +19,8 @@ export default{
         if (bcrypt.compareSync(req.body.password, user.password)) {
           // create token
           const token = jwt.sign({
-            username: user.username
+            password: user.password,
+            roleId: user.roleId
           }, app.get('superSecret'), { expiresIn: 86400 }
           );
           message = 'Login was successful';

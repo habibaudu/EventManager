@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     firstName: {
       type: DataTypes.STRING,
@@ -16,33 +15,38 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
 
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false
-
-    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
-        isEmail: {
-          args: true,
-          msg: 'Email address already in use!'
-        },
-        unique: true
-      },
+        isUnique(value, next) {
+          const self = this;
+          Users.find({ where: { email: value } })
+            .then((user) => {
+              // reject if a different user wants to use the same email
+              if (user && self.id !== user.id) {
+                return next('Email already in use!');
+              }
+              return next();
+            })
+            .catch(err => next(err));
+        }
+      }
     },
+
+    roleId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+
+
+    },
+
     password: {
       type: DataTypes.STRING,
       allowNull: false
 
     },
-
-    status: {
-      type: DataTypes.ENUM('active', 'inactive'),
-      defaultValue: 'active'
-    },
-
   });
   Users.associate = models =>
     Users.hasMany(models.Events, {
@@ -51,5 +55,4 @@ module.exports = (sequelize, DataTypes) => {
     });
   return Users;
 };
-
 

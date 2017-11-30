@@ -12,15 +12,15 @@ export default {
       .create({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        username: req.body.username,
         password,
-        email: req.body.email
+        email: req.body.email,
+        roleId: req.body.roleId
       })
       .then(user => res.status(201).send({ firstname: user.firstName,
         lastname: user.lastName,
-        username: user.username,
+        roleId: user.roleId,
         email: user.email }))
-      .catch(error => res.status(400).send({ message: 'Invalid email address'
+      .catch(error => res.status(400).send({ message: 'Email  Already in Use'
       }));
   }
 

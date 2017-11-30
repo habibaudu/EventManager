@@ -1,7 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('Centers', {
     id: {
-      allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER
@@ -15,12 +14,18 @@ module.exports = {
       type: Sequelize.STRING,
       allowNull: false
     },
-    Facilities: {
-      type: Sequelize.ARRAY(Sequelize.TEXT),
+    Capacity: {
+      type: Sequelize.INTEGER,
       allowNull: false
     },
+
+    price: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+
     status: {
-      type: Sequelize.ENUM('Available', 'Not Available'),
+      type: Sequelize.ENUM('Available', 'UnAvailable'),
       defaultValue: 'Available'
     },
 
@@ -32,15 +37,17 @@ module.exports = {
       allowNull: false,
       type: Sequelize.DATE
     },
-    eventId: {
+
+    userId: {
       type: Sequelize.INTEGER,
       onDelete: 'CASCADE',
       references: {
-        model: 'Events',
+        model: 'Users',
         key: 'id',
-        as: 'eventId',
+        as: 'userId',
       },
-    }
+    },
   }),
+
   down: (queryInterface, Sequelize) => queryInterface.dropTable('Centers')
 };

@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon --watch server --exec babel-node  -- server/app.js",
     "test": "nyc --reporter=html --reporter=text mocha --compilers js:babel-core/register server/test/test.js --timeout 90000",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "undo:migration": "node_modules/.bin/sequelize db:migrate:undo:all"
   },
   "author": "",
   "license": "ISC",

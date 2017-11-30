@@ -1,7 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('Users', {
     id: {
-      allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER
@@ -16,33 +15,22 @@ module.exports = {
       allowNull: false
 
     },
-    username: {
-      type: Sequelize.STRING,
-      allowNull: false
-
-    },
     email: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        isEmail: {
-          args: true,
-          msg: 'Email address already in use!'
-        },
-        unique: true
-      },
+        isEmail: true
+      }
     },
-
     password: {
       type: Sequelize.STRING,
       allowNull: false
 
     },
-    role: {
-      type: Sequelize.ENUM('admin', 'user'),
-      defaultValue: 'user'
+    roleId: {
+      type: Sequelize.INTEGER,
+      allowNull: false
     },
-
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE
