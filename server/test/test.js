@@ -8,7 +8,7 @@ const authenticatedUser = request.agent(app);
 chai.use(chaiHttp);
 
 const userCredentials = {
-  email: 'auduhabib@gmail.com',
+  email: 'auduhabib1990@gmail.com',
   password: 'hba821'
 };
 const wrongCredentials = {
@@ -31,7 +31,8 @@ const sentCredentials = {
   firstname: 'lucas',
   lastname: 'jesse',
   roleId: 2,
-  email: 'lucasone@gmail.com'
+  email: 'lucasone@gmail.com',
+  password: 'lucas'
 };
 const incompleteregisterCredentials = {
   firstName: 'lucas',

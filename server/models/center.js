@@ -1,9 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Center = sequelize.define('Center', {
-    id: {
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
+    centerId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     centerName: {
       type: DataTypes.STRING,
