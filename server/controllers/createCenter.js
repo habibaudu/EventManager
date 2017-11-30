@@ -3,7 +3,10 @@ import { Center } from '../models';
 
 export default {
   createCenter(req, res) {
- 
+    const role = req.decoded.roleId;
+    if (role !== 1) {
+      return res.json({ message: 'Only an adin can create a center' });
+    }
     return Center
       .create({
         centerName: req.body.centerName,
