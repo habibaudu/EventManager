@@ -46,7 +46,7 @@ export default {
 
               }))
               .catch(error => res.status(400).json({
-                message: error.errors[0].message
+                message: 'error occured '
               }));
           });
       });
