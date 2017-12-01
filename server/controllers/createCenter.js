@@ -3,6 +3,7 @@ import { Center } from '../models';
 export default {
   createCenter(req, res) {
     const role = req.decoded.roleId;
+    console.log(req.decoded.id);
     if (role !== 1) {
       return res.json({ message: 'Only an admin can create a center' });
     }

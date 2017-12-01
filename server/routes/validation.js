@@ -49,7 +49,7 @@ class Check {
     if (errormsg) {
       res.status(400).send({ message: 'center error', errormsg });
       return;
-    }git
+    }
     next();
   }
 
