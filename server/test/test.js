@@ -25,7 +25,7 @@ const registerCredentials = {
 
   roleId: 2,
   email: 'lucason@gmail.com',
-  password: 'lucas'
+  password: 'lucas123'
 };
 const sentCredentials = {
   firstname: 'lucas',
