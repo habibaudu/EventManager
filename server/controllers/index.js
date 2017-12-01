@@ -5,6 +5,7 @@ import createCenter from './createCenter';
 import allCenter from './allCenter';
 import aCenter from './aCenter';
 import modifyCenter from './modifyCenter';
+import modifiEvent from './modifiEvent';
 import roles from './roles';
 
 
@@ -16,5 +17,6 @@ export default{
   allCenter,
   aCenter,
   modifyCenter,
+  modifiEvent,
   roles
 };

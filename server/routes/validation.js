@@ -67,6 +67,19 @@ class Check {
     }
     next();
   }
+
+    static updateEvents(req, res, next) {
+    req.checkBody('eventType', 'event Type  cannot be null').notEmpty();
+    req.checkBody('eventType', 'event type must be a string').isAlpha();
+    req.checkBody('eventDate', 'eventDate cannot be null').notEmpty();
+    req.checkBody('centerId', 'centerId must be a number').isInt();
+    const errormsg = req.validationErrors();
+    if (errormsg) {
+      res.status(400).send({ message: 'events error', errormsg });
+      return;
+    }
+    next();
+  }
 }
 
 
