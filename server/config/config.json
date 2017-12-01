@@ -1,9 +1,9 @@
 {
   "development": {
-	"username": "ykpuzfch",
-    "password": "tbeijNlZZ-ocRbuZThX8klaE7OFOdDe1",
-    "database": "ykpuzfch",
-    "host": "baasu.db.elephantsql.com",
+	"username": "Habib",
+    "password": "hba",
+    "database": "yEvent",
+    "host": "localhost",
     "port": 5432,
     "dialect": "postgres"
 
@@ -13,7 +13,11 @@
   "dialect": "postgres"
   },
   "production": {
-   "use_env_variable": "bcqnglnm:g2uv_zrjN_CHApsdSSI7Ctbb-qBzKxew@baasu.db.elephantsql.com:bcqnglnm",
-   "dialect": "postgres"
+    "username": "ykpuzfch",
+    "password": "tbeijNlZZ-ocRbuZThX8klaE7OFOdDe1",
+    "database": "ykpuzfch",
+    "host": "baasu.db.elephantsql.com",
+    "port": 5432,
+    "dialect": "postgres"
   }
 }
