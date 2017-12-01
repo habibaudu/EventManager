@@ -10,7 +10,7 @@ app.set('superSecret', config.secret);
 const User = models.Users;
 export default{
   login(req, res) {
-   
+
     let message;
     User
       .findOne({ where: {
@@ -20,7 +20,9 @@ export default{
           // create token
           const token = jwt.sign({
             password: user.password,
-            roleId: user.roleId
+            roleId: user.roleId,
+            id: user.id
+
           }, app.get('superSecret'), { expiresIn: 86400 }
           );
           message = 'Login was successful';

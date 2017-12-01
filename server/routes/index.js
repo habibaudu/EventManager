@@ -9,6 +9,7 @@ const createCenterControllers = controller.createCenter;
 const allCenterControllers = controller.allCenter;
 const getacenterControllers = controller.aCenter;
 const modifycenterControllers = controller.modifyCenter;
+const modifieventControllers = controller.modifiEvent;
 const rolesControllers = controller.roles;
 
 
@@ -20,7 +21,8 @@ module.exports = (app) => {
 
   app.post('/api/users', Check.signup, signupControllers.register);
   app.post('/api/users/login', Check.signin, signinControllers.login);
-  app.post('/api/events', auth, Check.Events, createEventControllers.createEvents);
+  app.post('/api/events', auth, Check.Events, modifieventControllers.update);
+  app.put('/api/events/:eventId', auth, Check.updateEvents, createEventControllers.createEvents);
   app.post('/api/centers', auth, Check.center, createCenterControllers.createCenter);
   app.get('/api/centers', auth, allCenterControllers.getCenter);
   app.get('/api/centers/:centerId', auth, getacenterControllers.getAcenter);
