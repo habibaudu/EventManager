@@ -9,19 +9,37 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     eventDate: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
-
-    status: {
-      type: DataTypes.ENUM,
-      values: ['NotAvailable', 'Available'],
-      default: 'Available'
+    userId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Users',
+        key: 'id',
+        as: 'userId',
+      },
+      centerId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Centers',
+          key: 'id',
+          as: 'centerId',
+        },
+      }
     }
   });
   Events.associate = (models) => {
     Events.belongsTo(models.Center, {
       foreignKey: 'centerId',
+      onDelete: 'CASCADE'
+    });
+  };
+  Events.associate = (models) => {
+    Events.belongsTo(models.Users, {
+      foreignKey: 'userId',
       onDelete: 'CASCADE'
     });
   };
