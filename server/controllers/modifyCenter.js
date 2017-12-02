@@ -15,26 +15,22 @@ export default {
             message: 'Center Not Found!'
           });
         }
-        if (role === 1) {
-          return center
-            .update({
-              centerName,
-              Capacity,
-              Location,
-              price,
-              status
-            })
-            .then(() => res.status(200).json({
-              message: 'Center  was succefully modified',
-              center
-            }))
-            .catch(error => res.status(400).json({
-              message: 'error modifying center'
-            }));
-        }
-        return res.status(401).json({
-          message: 'You are not Authorized to edit this center!'
-        });
+
+        return center
+          .update({
+            centerName,
+            Capacity,
+            Location,
+            price,
+            status
+          })
+          .then(() => res.status(200).json({
+            message: 'Center  was succefully modified',
+            center
+          }))
+          .catch(error => res.status(400).json({
+            message: 'error modifying center'
+          }));
       })
       .catch(() => res.status(500).json({
         message: 'some error occured'
