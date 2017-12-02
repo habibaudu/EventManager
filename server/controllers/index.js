@@ -7,7 +7,7 @@ import aCenter from './aCenter';
 import modifyCenter from './modifyCenter';
 import modifiEvent from './modifiEvent';
 import deleteEvents from './deleteEvents';
-import roles from './roles';
+import allEvents from './allEvents';
 
 
 export default{
@@ -20,5 +20,5 @@ export default{
   modifyCenter,
   modifiEvent,
   deleteEvents,
-  roles
+  allEvents
 };
