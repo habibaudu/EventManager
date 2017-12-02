@@ -29,7 +29,7 @@ module.exports = (app) => {
   app.delete('/api/events/:eventId', auth, deleteControllers.destroy);
   app.get('/api/centers', auth, allCenterControllers.getCenter);
   app.get('/api/centers/:centerId', auth, getacenterControllers.getAcenter);
-  app.put('/api/centers/:centerId', auth, modifycenterControllers.update);
+  app.put('/api/centers/:centerId', auth, modifycenterControllers.modify);
   app.get('/api/events', auth, allEventsControllers.getEvents);
   app.get('/api/users', auth, allUsersControllers.getusers);
 

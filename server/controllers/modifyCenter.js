@@ -2,44 +2,42 @@ import models from '../models';
 
 const Center = models.Center;
 export default {
-  update(req, res) {
+  modify(req, res) {
+    const role = req.decoded.roleId;
+    const {
+      centerName, Capacity, Location, status, price
+    } = req.body;
     return Center
-      .find({
-        where: {
-          id: req.params.centerId,
-
-        },
-      })
+      .findById(req.params.centerId)
       .then((center) => {
         if (!center) {
-          return res.status(404).send({
-            message: 'Center Not Found',
+          return res.status(400).json({
+            message: 'Center Not Found!'
           });
         }
-
-        console.log(`center = ${typeof center}`);
-        console.log('=========');
-        console.log(center.status);
-
-        return Center
-          .update({
-            status: req.body.status,
-
-            price: req.body.price,
-            Capacity: req.body.Capacity,
-            Location: req.body.Location,
-            centeName: req.body.centerName
-
-          })
-          .then(c => res.status(200).send(c))
-          .catch(error => res.status(400).send(error));
+        if (role === 1) {
+          return center
+            .update({
+              centerName,
+              Capacity,
+              Location,
+              price,
+              status
+            })
+            .then(() => res.status(200).json({
+              message: 'Center  was succefully modified',
+              center
+            }))
+            .catch(error => res.status(400).json({
+              message: 'error modifying center'
+            }));
+        }
+        return res.status(401).json({
+          message: 'You are not Authorized to edit this center!'
+        });
       })
-
-      .catch((error) => {
-        console.log('getting to this point...');
-        console.log(error);
-        res.status(400).send(error);
-      });
-  },
-
+      .catch(() => res.status(500).json({
+        message: 'some error occured'
+      }));
+  }
 };
