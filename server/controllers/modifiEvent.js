@@ -1,6 +1,6 @@
 import models from '../models';
 
-const { Events, Center } = models;
+const { Events } = models;
 
 export default {
   update(req, res) {
@@ -22,16 +22,16 @@ export default {
                 eventDate
               }
             })
-            .then((events) => {
-              if (events) {
+            .then(() => {
+              if (event) {
                 return res.status(400).send({
                   message: 'Center Taken'
                 });
               }
-              return events
+              return event
                 .update({
                   eventDate,
-                  eventType,
+                  eventType
                 })
                 .then(events => res.status(200).send({
                   message: 'Event has been modified',
@@ -45,10 +45,7 @@ export default {
         return res.status(401).send({
           message: 'Only event owner is authorize to modify event!'
         });
-      })
-      .catch(() => res.status(500).send({
-        message: 'some error occured'
-      }));
+      });
   }
 
 };

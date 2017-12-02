@@ -2,7 +2,6 @@ import models from '../models';
 
 const { Events } = models;
 
-
 export default {
   destroy(req, res) {
     console.log(req.decoded.id);
