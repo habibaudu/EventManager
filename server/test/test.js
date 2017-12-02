@@ -43,10 +43,10 @@ const incompleteregisterCredentials = {
 };
 
 
-describe('users', () => {
+describe('users login', () => {
   before((done) => {
     authenticatedUser
-      .post('/api/users/login')
+      .post('/habibeventmanager.herokuapp.com/api/users/login')
       .send(userCredentials)
       .end((err, response) => {
         expect(response.statusCode).to.equal(200);
@@ -55,7 +55,7 @@ describe('users', () => {
   });
   it('it should  post new user', (done) => {
     authenticatedUser
-      .post('/api/users/login')
+      .post('/habibeventmanager.herokuapp.com/api/users/login')
       .send(userCredentials)
       .expect('Content-type', /json/)
       .expect(200)
@@ -67,7 +67,7 @@ describe('users', () => {
 
   it('it should  return 400 for wrongCredential ', (done) => {
     authenticatedUser
-      .post('/api/users/login')
+      .post('/habibeventmanager.herokuapp.com/api/users/login')
       .send(wrongCredentials)
       .expect('Content-type', /json/)
       .expect(400)
@@ -78,7 +78,7 @@ describe('users', () => {
   });
   it('it should  return 400 for half_rightCredentials', (done) => {
     authenticatedUser
-      .post('/api/users/login')
+      .post('/habibeventmanager.herokuapp.com/api/users/login')
       .send(halfrightCredentials)
       .expect('Content-type', /json/)
       .expect(400)
@@ -89,7 +89,7 @@ describe('users', () => {
   });
   it('it should  return Incorrect password or email', (done) => {
     authenticatedUser
-      .post('/api/users/login')
+      .post('/habibeventmanager.herokuapp.com/api/users/login')
       .send(halfrightCredentials)
       .expect('Content-type', /json/)
       .expect(400)
@@ -101,7 +101,7 @@ describe('users', () => {
 
   it('it should  return user not found in database', (done) => {
     authenticatedUser
-      .post('/api/users/login')
+      .post('/habibeventmanager.herokuapp.com/api/users/login')
       .send(wrongCredentials)
       .expect('Content-type', /json/)
       .expect(400)
@@ -112,7 +112,7 @@ describe('users', () => {
   });
   it('it should  return Login was successful for good credentials', (done) => {
     authenticatedUser
-      .post('/api/users/login')
+      .post('/habibeventmanager.herokuapp.com/api/users/login')
       .send(userCredentials)
       .expect('Content-type', /json/)
       .expect(201)
@@ -125,7 +125,7 @@ describe('users', () => {
 
   it('it should  return 201 for uersCredentials', (done) => {
     authenticatedUser
-      .post('/api/users')
+      .post('/habibeventmanager.herokuapp.com/api/users')
       .send(registerCredentials)
       .expect('Content-type', /json/)
       .expect(200)
@@ -136,7 +136,7 @@ describe('users', () => {
   });
   it('it should  return the credentials used to register excluding password', (done) => {
     authenticatedUser
-      .post('/api/users')
+      .post('/habibeventmanager.herokuapp.com/api/users')
       .send(registerCredentials)
       .expect('Content-type', /json/)
       .expect(200)
@@ -147,7 +147,7 @@ describe('users', () => {
   });
   it('it should  return 400 for ignoring some filleds', (done) => {
     authenticatedUser
-      .post('/api/users')
+      .post('/habibeventmanager.herokuapp.com/api/users')
       .send(incompleteregisterCredentials)
       .expect('Content-type', /json/)
       .expect(400)
