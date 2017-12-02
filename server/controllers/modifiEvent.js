@@ -4,8 +4,7 @@ const { Events } = models;
 
 export default {
   update(req, res) {
-    const userId = req.decoded.id;
-    const { eventType, eventDate } = req.body;
+    const { eventType, eventDate, userId, centerId } = req.body;
 
     return Events
       .find({
@@ -23,8 +22,10 @@ export default {
 
         return Events
           .update({
-            eventDate: req.body.eventDate || event.eventDate,
-            eventType: req.body.eventType || event.eventType,
+            eventDate: eventDate || event.eventDate,
+            eventType: eventType || event.eventType,
+            userId: userId || event.userId,
+            centerId: centerId || event.centerId,
           })
           .then(() => res.status(200).send(event)) // Send back the updated evnts
           .catch(error => res.status(400).send(error));
