@@ -28,7 +28,7 @@ export default {
             centerId: centerId || event.centerId,
           })
           .then(() => res.status(200).send(event)) // Send back the updated evnts
-          .catch(error => res.status(400).send(error));
+          .catch(error => res.status(400).send(error.toString));
       })
 
       .catch(error => res.status(400).send(error));
