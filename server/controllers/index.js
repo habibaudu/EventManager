@@ -21,6 +21,6 @@ export default{
   modifyCenter,
   modifiEvent,
   deleteEvents,
-  allEvents
+  allEvents,
   allUsers
 };
