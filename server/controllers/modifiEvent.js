@@ -26,7 +26,7 @@ export default {
             eventDate: req.body.eventDate || event.eventDate,
             eventType: req.body.eventType || event.eventType,
           })
-          .then(() => res.status(200).send(event)) // Send back the updated todo.
+          .then(() => res.status(200).send(event)) // Send back the updated evnts
           .catch(error => res.status(400).send(error));
       })
 
