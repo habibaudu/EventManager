@@ -16,7 +16,7 @@ export default {
           });
         }
 
-        return center
+        return Center
           .update({
             centerName,
             Capacity,
