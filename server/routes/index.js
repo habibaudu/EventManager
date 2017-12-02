@@ -12,6 +12,7 @@ const modifycenterControllers = controller.modifyCenter;
 const modifieventControllers = controller.modifiEvent;
 const deleteControllers = controller.deleteEvents;
 const allEventsControllers = controller.allEvents;
+const allUsersControllers = controller.allUsers;
 
 
 
@@ -29,7 +30,8 @@ module.exports = (app) => {
   app.get('/api/centers', auth, allCenterControllers.getCenter);
   app.get('/api/centers/:centerId', auth, getacenterControllers.getAcenter);
   app.put('/api/centers/:centerId', auth, modifycenterControllers.update);
-  app.get('/api/events', allEventsControllers.getEvents);
+  app.get('/api/events', auth, allEventsControllers.getEvents);
+  app.get('/api/users', auth, allUsersControllers.getusers);
 
 
   app.all('/api/signup/users', (req, res) =>
