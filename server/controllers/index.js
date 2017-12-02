@@ -8,6 +8,7 @@ import modifyCenter from './modifyCenter';
 import modifiEvent from './modifiEvent';
 import deleteEvents from './deleteEvents';
 import allEvents from './allEvents';
+import allUsers from './allUsers';
 
 
 export default{
@@ -21,4 +22,5 @@ export default{
   modifiEvent,
   deleteEvents,
   allEvents
+  allUsers
 };
