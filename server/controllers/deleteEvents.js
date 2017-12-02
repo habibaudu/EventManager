@@ -2,7 +2,6 @@ import models from '../models';
 
 const { Events } = models;
 
-
 export default {
   destroy(req, res) {
     console.log(req.decoded.id);
@@ -17,10 +16,10 @@ export default {
 
         return events
           .destroy()
-          .then(events => res.status(200).json({ message: 'your Event has been deleted' }))
+          .then(() => res.status(200).json({ message: 'your Event has been deleted' }))
           .catch(error => res.status(400).send(error));
       }
       )
-      .catch(error => res.status(400).send({ message: 'You do not  have Authorization to delete this event' }));
+      .catch(error => res.status(400).send({ message: 'Event not deleted' }));
   }
 };
