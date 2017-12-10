@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('Centers', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('Center', {
     id: {
       autoIncrement: true,
       primaryKey: true,
@@ -23,10 +23,13 @@ module.exports = {
       type: Sequelize.INTEGER,
       allowNull: false
     },
-
-    status: {
-      type: Sequelize.ENUM('Available', 'UnAvailable'),
-      defaultValue: 'Available'
+    image: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    isAvailable: {
+      type: Sequelize.BOOLEAN,
+      allowNull: false
     },
 
     createdAt: {
@@ -38,16 +41,7 @@ module.exports = {
       type: Sequelize.DATE
     },
 
-    userId: {
-      type: Sequelize.INTEGER,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'Users',
-        key: 'id',
-        as: 'userId',
-      },
-    },
   }),
 
-  down: (queryInterface, Sequelize) => queryInterface.dropTable('Centers')
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('Center')
 };

@@ -19,16 +19,20 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-
-    status: {
-      type: DataTypes.ENUM('Available', 'UnAvailable'),
-      defaultValue: 'Available'
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
+    isAvailable: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+
+    }
   });
   Center.associate = (models) => {
-    Center.belongsTo(models.Users, {
-      foreignKey: 'userId',
-      onDelete: 'CASCADE'
+    Center.hasMany(models.Events, {
+      foreignKey: 'centerId',
+      as: 'events'
     });
   };
   return Center;

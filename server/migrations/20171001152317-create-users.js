@@ -22,14 +22,15 @@ module.exports = {
         isEmail: true
       }
     },
+    isAdmin: {
+      type: Sequelize.BOOLEAN,
+      allowNull: true,
+      defaultValue: false
+    },
     password: {
       type: Sequelize.STRING,
       allowNull: false
 
-    },
-    roleId: {
-      type: Sequelize.INTEGER,
-      allowNull: false
     },
     createdAt: {
       allowNull: false,
