@@ -1,9 +1,9 @@
 {
   "development": {
-	"username": "Habib",
-    "password": "hba",
-    "database": "yEvent",
-    "host": "localhost",
+	"username": "nncgvkvk",
+    "password": "aVIVNXA9Tck5-HHmbXXZTQmX9Tu5DfrR",
+    "database": "nncgvkvk",
+    "host": "baasu.db.elephantsql.com",
     "port": 5432,
     "dialect": "postgres"
 
@@ -14,9 +14,9 @@
   },
   "production": {
     "username": "ykpuzfch",
-    "password": "tbeijNlZZ-ocRbuZThX8klaE7OFOdDe1",
-    "database": "ykpuzfch",
-    "host": "baasu.db.elephantsql.com",
+    "password": "ssd",
+    "database": "ykp",
+    "host": "b",
     "port": 5432,
     "dialect": "postgres"
   }

@@ -1,8 +1,24 @@
 module.exports = (sequelize, DataTypes) => {
   const Events = sequelize.define('Events', {
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Users',
+        key: 'id',
+        as: 'userId'
+      }
+    },
     centerId: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Center',
+        key: 'id',
+        as: 'centerId'
+      }
     },
     eventType: {
       type: DataTypes.STRING,
@@ -12,24 +28,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'Users',
-        key: 'id',
-        as: 'userId',
-      },
-      centerId: {
-        type: DataTypes.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'Centers',
-          key: 'id',
-          as: 'centerId',
-        },
-      }
-    }
   });
   Events.associate = (models) => {
     Events.belongsTo(models.Center, {

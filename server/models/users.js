@@ -33,12 +33,10 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-
-    roleId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-
-
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: false
     },
 
     password: {

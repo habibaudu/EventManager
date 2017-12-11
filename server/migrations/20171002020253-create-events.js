@@ -1,17 +1,30 @@
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('Events', {
     id: {
+      allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER
     },
-    centerId: {
-      type: Sequelize.INTEGER,
-
-    },
     userId: {
       type: Sequelize.INTEGER,
-
+      allowNull: false,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Users',
+        key: 'id',
+        as: 'userId'
+      }
+    },
+    centerId: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Center',
+        key: 'id',
+        as: 'centerId'
+      }
     },
     eventType: {
       allowNull: false,
