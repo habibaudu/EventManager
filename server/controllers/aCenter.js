@@ -1,15 +1,27 @@
 import models from '../models';
 
 
-const Center = models.Center;
+const { Centers, Events } = models;
 export default{
   getAcenter(req, res) {
-    Center
-      .findOne({ where: {
-        id: req.params.centerId,
-      }
-      }).then(center => res.status(200).send(center))
-      .catch(error => res.status(400).send({ message: 'Center Not found' }));
+    Centers
+      .findById(req.params.centerId, {
+        include: [{
+          model: Events,
+          as: 'events'
+        }]
+      })
+      .then((center) => {
+        if (!center) {
+          return res.status(404).json({
+            message: 'Center Not Found'
+          });
+        }
+        return res.status(200).json({
+          message: 'Center Found',
+          center
+        });
+      });
   }
 
 

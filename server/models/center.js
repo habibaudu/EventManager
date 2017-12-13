@@ -1,16 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
-  const Center = sequelize.define('Center', {
+  const Centers = sequelize.define('Centers', {
 
     centerName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    Location: {
+    location: {
       type: DataTypes.STRING,
       allowNull: false
     },
 
-    Capacity: {
+    capacity: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -22,19 +22,30 @@ module.exports = (sequelize, DataTypes) => {
     image: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Image cannot be null, enter true or false!'
+        },
+      }
     },
     isAvailable: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'isAvailable cannot be null'
+        }
+      }
     }
   });
-  Center.associate = (models) => {
-    Center.hasMany(models.Events, {
+  Centers.associate = (models) => {
+    Centers.hasMany(models.Events, {
       foreignKey: 'centerId',
       as: 'events'
     });
   };
-  return Center;
+  return Centers;
 };
 

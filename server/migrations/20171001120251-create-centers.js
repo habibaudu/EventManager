@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('Center', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('Centers', {
     id: {
       autoIncrement: true,
       primaryKey: true,
@@ -10,11 +10,11 @@ module.exports = {
       type: Sequelize.STRING,
       allowNull: false
     },
-    Location: {
+    location: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    Capacity: {
+    capacity: {
       type: Sequelize.INTEGER,
       allowNull: false
     },
@@ -25,11 +25,23 @@ module.exports = {
     },
     image: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Image cannot be null, enter true or false!'
+        },
+      }
     },
     isAvailable: {
       type: Sequelize.BOOLEAN,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Availability Field Required!'
+        }
+      }
     },
 
     createdAt: {
@@ -43,5 +55,5 @@ module.exports = {
 
   }),
 
-  down: (queryInterface, Sequelize) => queryInterface.dropTable('Center')
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('Centers')
 };

@@ -1,39 +1,39 @@
 import models from '../models';
 
-const Center = models.Center;
+const Centers = models.Centers;
 export default {
   modify(req, res) {
-    const role = req.decoded.roleId;
+    const userId = req.decoded.id;
+    if (userId !== 1) {
+      return res.json({ message: 'Only an admin can edit a center' });
+    }
     const {
-      centerName, Capacity, Location, status, price
+      centerName, capacity, location, image, isAvailable, price
     } = req.body;
-    return Center
+    return Centers
       .findById(req.params.centerId)
       .then((center) => {
         if (!center) {
-          return res.status(400).json({
+          return res.status(404).json({
             message: 'Center Not Found!'
           });
         }
-
-        return Center
+        return center
           .update({
             centerName,
-            Capacity,
-            Location,
+            capacity,
+            location,
             price,
-            status
+            image,
+            isAvailable
           })
-          .then(() => res.status(200).json({
-            message: 'Center  was succefully modified',
-            center
+          .then(modifiedCenter => res.status(200).json({
+            message: 'Center  modified  successfully',
+            modifiedCenter
           }))
           .catch(error => res.status(400).json({
-            message: 'error modifying center'
+            message: 'center not updated'
           }));
-      })
-      .catch(() => res.status(500).json({
-        message: 'some error occured'
-      }));
+      });
   }
 };

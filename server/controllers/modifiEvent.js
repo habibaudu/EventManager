@@ -4,34 +4,53 @@ const { Events } = models;
 
 export default {
   update(req, res) {
-    const { eventType, eventDate, userId, centerId } = req.body;
+    const { eventType, eventDate } = req.body;
 
     return Events
-      .find({
-        where: {
-          id: req.params.eventId,
-
-        },
-      })
+      .findById(req.params.eventId)
       .then((event) => {
         if (!event) {
-          return res.status(404).send({
-            message: 'Events Not Found',
+          return res.status(400).json({
+            message: 'Event Not Found!'
           });
         }
+        if (req.decoded.id === event.userId) {
+          return Events
+            .findOne({
+              where: {
+                centerId: req.body.centerId,
+                eventDate
+              }
+            })
+            .then((Eventss) => {
+              if (Eventss) {
+                return res.status(400).json({
+                  message: 'Center has been booked'
+                });
+              }
+              return event
+                .update({
 
-        return Events
-          .update({
-            eventDate: eventDate || event.eventDate,
-            eventType: eventType || event.eventType,
-            userId: userId || event.userId,
-            centerId: centerId || event.centerId,
-          })
-          .then(() => res.status(200).send(event)) // Send back the updated evnts
-          .catch(error => res.status(400).send(error.toString));
+                  centerId: req.body.centerId,
+                  eventDate: eventDate || event.eventDate,
+                  eventType: eventType || event.eventType
+                })
+                .then(ModifiedEvent => res.status(200).json({
+                  ModifiedEvent,
+                  message: 'Event Has been Modified'
+                }))
+                .catch(error => res.status(400).json({
+                  message: 'Event was not modified'
+                }));
+            });
+        }
+        return res.status(401).json({
+          message: 'You do not have  Authorization to modify this event!'
+        });
       })
+      .catch(error => res.status(500).json(error.toString()
 
-      .catch(error => res.status(400).send(error));
+      ));
   }
 };
 

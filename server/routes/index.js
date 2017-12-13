@@ -15,7 +15,6 @@ const allEventsControllers = controller.allEvents;
 const allUsersControllers = controller.allUsers;
 
 
-
 module.exports = (app) => {
   app.get('/api', (req, res) => res.status(200).send({
     message: 'Welcome to EventManager App!',
