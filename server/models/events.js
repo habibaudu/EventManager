@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       onDelete: 'CASCADE',
       references: {
-        model: 'Center',
+        model: 'Centers',
         key: 'id',
         as: 'centerId'
       }
@@ -24,13 +24,24 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+
     eventDate: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
-    },
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Date cannot be null!'
+        },
+        is: {
+          args: /(\d{2}(-\d{2}){2})/,
+          msg: 'Fill in Date format yy-mm-dd'
+        }
+      }
+    }
   });
   Events.associate = (models) => {
-    Events.belongsTo(models.Center, {
+    Events.belongsTo(models.Centers, {
       foreignKey: 'centerId',
       onDelete: 'CASCADE'
     });

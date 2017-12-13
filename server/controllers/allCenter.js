@@ -1,11 +1,11 @@
 import models from '../models';
 
-const Center = models.Center;
+const Centers = models.Centers;
 export default {
   getCenter(req, res) {
-    Center
+    Centers
       .all()
-      .then(center => res.status(200).send(center)) 
+      .then(center => res.status(200).send(center))
       .catch(error => res.status(400).send(error));
   },
 };

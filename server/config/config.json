@@ -4,7 +4,6 @@
     "password": "aVIVNXA9Tck5-HHmbXXZTQmX9Tu5DfrR",
     "database": "nncgvkvk",
     "host": "baasu.db.elephantsql.com",
-    "port": 5432,
     "dialect": "postgres"
 
   },

@@ -13,13 +13,15 @@ export default {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         password,
-        email: req.body.email,
-        roleId: req.body.roleId
+        email: req.body.email
       })
-      .then(user => res.status(201).send({ firstname: user.firstName,
+      .then(user => res.status(201).send({ 
+        message: 'Registration sucessful',
+        firstname: user.firstName,
         lastname: user.lastName,
-        roleId: user.roleId,
-        email: user.email }))
+        email: user.email,
+        isAdmin: user.isAdmin
+      }))
       .catch(error => res.status(400).send({ message: 'Email  Already in Use'
       }));
   }

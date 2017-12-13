@@ -21,7 +21,7 @@ module.exports = {
       allowNull: false,
       onDelete: 'CASCADE',
       references: {
-        model: 'Center',
+        model: 'Centers',
         key: 'id',
         as: 'centerId'
       }
@@ -30,10 +30,19 @@ module.exports = {
       allowNull: false,
       type: Sequelize.STRING
     },
-
     eventDate: {
-      type: Sequelize.DATEONLY,
-      allowNull: false
+      type: Sequelize.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Date  cannot be null!'
+        },
+        is: {
+          args: /(\d{2}(-\d{2}){2})/,
+          msg: 'Fill in Date format yy-mm-dd'
+        }
+      }
     },
 
     createdAt: {

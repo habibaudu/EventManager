@@ -1,21 +1,25 @@
-import { Center } from '../models';
+import { Centers } from '../models';
 
 export default {
   createCenter(req, res) {
-    const role = req.decoded.roleId;
-    console.log(req.decoded.id);
-    if (role !== 1) {
+    const userId = req.decoded.id;
+    if (userId !== 1) {
       return res.json({ message: 'Only an admin can create a center' });
     }
 
-    return Center
+    return Centers
       .create({
         centerName: req.body.centerName,
-        Capacity: req.body.Capacity,
-        Location: req.body.Location,
+        capacity: req.body.capacity,
+        location: req.body.location,
+        image: req.body.image,
+        isAvailable: req.body.isAvailable,
         price: req.body.price
       })
-      .then(center => res.status(201).send({ message: 'Center created sucessful' }))
+      .then(center => res.status(201).send({
+        message: 'Center created sucessfully',
+        center
+      }))
       .catch(error => res.status(400).send(error.toString()));
   }
 

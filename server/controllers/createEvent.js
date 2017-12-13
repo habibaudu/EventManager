@@ -1,53 +1,53 @@
 import models from '../models';
 
-const { Events, Center } = models;
+const { Events, Centers } = models;
 
 export default {
   createEvents(req, res) {
-    const { eventType, centerId, eventDate, userId } = req.body;
+    const { eventType, centerId, eventDate, } = req.body;
 
-    return Center
+    return Centers
       .findOne({
         where: {
           id: req.body.centerId,
-          status: 'Available'
+          isAvailable: true
         }
       })
-      .then((centerFound) => {
-        if (!centerFound) {
+      .then((found) => {
+        if (!found) {
           return res.status(404).json({
-            message: 'Center is not Available'
+            message: 'center is currently not available'
           });
         }
         return Events
           .findOne({
             where: {
-              centerId: req.body.centerId,
+              centerId,
               eventDate
             }
           })
           .then((eventFound) => {
             if (eventFound) {
               return res.status(400).json({
-                message: 'Center is taken'
+                message: 'Center has been booked'
               });
             }
             return Events
               .create({
-                userId: req.body.userId,
+                userId: req.decoded.id,
                 centerId: req.body.centerId,
                 eventType,
                 eventDate
               })
-              .then(events => res.status(201).json({
-                message: 'Event Created succesfull',
-                eventDate: events.eventDate,
-                eventType: events.eventType
-
+              .then(created => res.status(201).json({
+                message: 'Event Created!',
+                createdEvent: {
+                  date: created.eventDate,
+                  type: created.eventType
+                }
               }))
-              .catch(error => res.status(400).json({
-                message: 'error occured '
-              }));
+              .catch(error => res.status(400).send(error.toString()
+              ));
           });
       });
   }
