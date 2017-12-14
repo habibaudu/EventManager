@@ -1,9 +1,9 @@
 {
   "development": {
-	"username": "nncgvkvk",
-    "password": "aVIVNXA9Tck5-HHmbXXZTQmX9Tu5DfrR",
+	"username": "nncg",
+    "password": "aVIVNXA",
     "database": "nncgvkvk",
-    "host": "baasu.db.elephantsql.com",
+    "host": "baasu.db.el",
     "dialect": "postgres"
 
   },
@@ -12,10 +12,10 @@
   "dialect": "postgres"
   },
   "production": {
-    "username": "ykpuzfch",
-    "password": "ssd",
-    "database": "ykp",
-    "host": "b",
+    "username": "nncgvkvk",
+    "password": "aVIVNXA9Tck5-HHmbXXZTQmX9Tu5DfrR",
+    "database": "nncgvkvk",
+    "host": "baasu.db.elephantsql.com",
     "port": 5432,
     "dialect": "postgres"
   }
