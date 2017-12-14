@@ -1,9 +1,9 @@
 {
   "development": {
-	"username": "nncg",
-    "password": "aVIVNXA",
-    "database": "nncgvkvk",
-    "host": "baasu.db.el",
+	"username": "ykpuzfch",
+    "password": "tbeijNlZZ-ocRbu",
+    "database": "ykpuzfch",
+    "host": "baasu.db.elephantsql.com",
     "dialect": "postgres"
 
   },
